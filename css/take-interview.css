@@ -1,0 +1,51 @@
+/*body {
+  font-family: 'Montserrat', sans-serif;
+  background: #303841;
+  color: #FFFFFF;
+  word-wrap: break-word;
+}
+.clearfix {
+  overflow: auto;
+}
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 15px;
+}*/
+/*@media (min-width: 401px) {
+  .container {
+    width: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}*/
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400);
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+
+//IFRAME
+
+.trigger-iFrame{
+  font-size: 20px;
+  background: #F04903;
+  color: white;
+  width: 300px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+
+.iziModal .iziModal-header-title , .iziModal-header-subtitle {
+    font-family: Lato;
+    font-weight: 100;
+    font-size: 25px;
+}

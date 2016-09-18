@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Procured Admin</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.css">
+     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><!--  <img src="res/logo.png" width="100" height="35" /> --></a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-footer">
+                            <a href="#">Read All New Messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        <li>
+                            <a href="admin-prof.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li  class="active">
+                        <a href="create-test.html"><i class="fa fa-fw fa-edit"></i> Create Test</a>
+                    </li>
+                    <li>
+                        <a href="manage-tests.html"><i class="fa fa-fw fa-edit"></i> Manage Tests</a>
+                    </li>
+                    <li>
+                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    </li>
+                    <li>
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                        <h1 class="page-header" style="padding-top:35px; text-align:center;">
+                            Forms
+                        </h1>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+
+                        <form role="form">
+
+                            <!-- college names -->
+                            <div class="form-group">
+                                <label>College</label>
+                                <select id="ddCollege" class="form-control">
+                                    <option>Select College</option>
+                                    <option>--------------</option>
+                                </select>
+                            </div>
+                            <br>
+                            <!-- college names -->
+                            <div class="form-group">
+                                <label>Date</label>
+                                 <div ng-app="MyApp" class="datepickerdemoBasicUsage" ng-controller="AppCtrl">
+            <md-content>
+
+             <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+            </md-content>
+            </div>
+                            </div>
+                            <br>
+                            <!-- marks range -->
+                            <div class="form-group">
+                                <label>Select Criteria</label>
+                                <br> <br>
+                                <!-- 10th -->
+                                <p>10th Std :: <span id="range10">40</span>%</p>
+                                <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
+
+                                    <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,10)"/>
+                                    <br>
+                                <!-- 12th -->
+                                <p>12th Std :: <span id="range12">40</span>%</p>
+                                <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,12)" /> -->
+                                <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,12)"/>
+                                <br>
+                                <!-- College -->
+                                <p>College CGPA :: <span id="range16">7.75</span></p>
+                                <!-- <input type="range" min="0.0" max="10.0" value="7.75" step=".25" onchange="showValue(this.value,16)" /> -->
+                                <input class=" range-slider range-slider__range" type="range" value="7.75" min="0" max="10" step=".25" onchange="showValue(this.value,16)"/>
+                                <br>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label>Test Format</label>
+                                 
+                                <div class="checkbox" style="padding-left:18px;padding-top:13px;">
+  <p>
+    <input type="checkbox" id="cb_wt" name="cb_wt"  checked="checked" onchange="writAlt()" />
+    <label for="cb_wt" id="1">Written Test</label>
+
+    <div class="wt_opts">
+                <p>
+                    <input type="checkbox" id="cb_wt_apti"/>
+                    <label for="cb_wt_apti">Aptitude</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="cb_wt_bev"/>
+                    <label for="cb_wt_bev">Behavioral</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="cb_wt_reas"/>
+                    <label for="cb_wt_reas">Reasoning</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="cb_wt_tech"/>
+                    <label for="cb_wt_tech">Technical</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="cb_wt_verb"/>
+                    <label for="cb_wt_verb">Verbal</label>
+                </p>
+    </div>
+  </p>
+  <p>
+    <input type="checkbox" id="cb_gd"/>
+    <label for="cb_gd">Group Discussion</label>
+  </p>
+  <p>
+    <input type="checkbox" id="cb_ti" />
+    <label for="cb_ti" id="3" style="font-weight: normal;"">Technical Interview</label>
+  </p>
+  <p>
+    <input type="checkbox" id="cb_hri"/>
+    <label for="cb_hri" id="4" style="font-weight: normal;"">HR Interview</label>
+  </p>
+  </div>
+
+
+                            <br><br>
+                            <button type="button" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="window.open('res/Questions.xlsx')"">Download Question Template</button>
+                            <!-- <button type="file" id="quesUp" class="btn btn-default btn-awesome"">Upload Questions</button> -->
+                            
+<div class="fileUpload btn btn-default btn-awesome" style="margin-right:10px" >
+    <span>Upload Questions</span>
+    <input id="uploadBtn" type="file" class="upload" />
+</div>
+
+
+                            <button type="submit" id="myBtn" class="btn btn-default btn-awesome" style="margin-right:10px" >Submit</button>
+
+                        </form>
+
+                    </div>
+                    <div class="col-lg-3"></div>
+                    
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- oursss -->    
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+        <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.js"></script>
+    <script src="js/proc-admin.js"></script>
+    <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
+
+
+</body>
+
+</html>
