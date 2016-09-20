@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>SB Admin - Bootstrap Admin Template</title>
+		<title>Procured Admin</title>
 		<!-- Bootstrap Core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom CSS -->
@@ -181,8 +181,11 @@
 				</div>
 				<!-- /.navbar-collapse -->
 			</nav>
-			<div id="page-wrapper">
+			<div id="page-wrapper" scrolling="yes">
 				<div class="container-fluid">
+				
+
+
 					<!-- <div class="form-group">
 								<div class="col-lg-6"  id="stud_dets">
 									
@@ -190,45 +193,75 @@
 							
 					</div> -->
 
-					<div class="row" id="s_name">
+								<!-- <div id="tit-wrapper" class="row">
+								  <div id="tit-first" onclick="prevS()" class="col-lg-2">
+									<h4 class="prev" > << </h4>
+								  	
+								  </div>
+								  <div id="tit-second">
+								  	<div class="row" id="s_name" style="margin-bottom:25px" class="col-lg-10">
+									<!-- Students name gets displayed -->
+									<!-- </div>
+								  	
+								  </div>
+								  <div id="tit-third" onclick="nextS()" class="col-lg-2">
+								  	<h4 class="next"> >> </h4>
+
+								  </div>
+								</div> --> 
+
+					<div class="row">
+						
+									<!-- <div onclick="prevS()"><h4 class="prev" > << </h4></div> -->
+							<div class="row" id="s_name" style="margin-bottom:25px">
+							<!-- Students name gets displayed -->
+
+							</div>
+									<!-- <div onclick="nextS()"><h4 class="next"> >> </h4></div> -->
 
 					</div>
 
-					<div class="row">
+					
 
+					<div class="row" style="padding: 20px;margin-right:auto; margin-left:auto;">
 
-						<!-- <div class="col-lg-2"> -->
-							<!-- Modals -->
-							<!-- <div id="sel_stud_list" style="font-family: Lato; padding: 15px;overflow-x:hidden;">
-							</div> -->
-							
-						<!-- </div> -->
-						<!-- Student Details -->
-						<div class="col-lg-6">
-							<!-- <iframe id="preview-frame" src="take-int-stud.html" scrolling="no" style="width:100%;" frameborder="0" noresize="noresize">
-								
-							</iframe> -->
-							<div class="form-group">
-								<div  id="stud_dets" style="max-width:500px;margin-right:auto; margin-left:auto;">
-									
-								</div>
+						<div class="col-lg-7">
+
+							<div class="col-lg-6" id="stud_list" style="max-width:500px;margin-right:auto; margin-left:auto;padding-top:15px;padding-left:0px;margin-bottom: 50px;">
+
+								<!-- Stud List-->
+
+								<!-- <div id="sel_stud_list" style="font-family: Lato; padding: 15px;overflow-x:hidden;">
+								</div> -->
+								<!-- <div class="waves-effect waves-light btn-large blue darken-2 stud-list" style="margin-left: 25%;">Modal iFrame SSS</div> -->
 								
 							</div>
+							<!-- Student Details -->
+							<div class="col-lg-6">
+								<!-- <iframe id="preview-frame" src="take-int-stud.html" scrolling="no" style="width:100%;" frameborder="0" noresize="noresize">
+									
+								</iframe> -->
+								<div class="form-group">
+									<div  id="stud_dets" style="max-width:500px;margin-right:auto; margin-left:auto;padding-top:15px;">
+										
+									</div>
+									
+								</div>
+							</div>	
+
 						</div>
-						<div class="col-lg-6">
-							<div class="notes-container" >
+
+
+						
+						<div class="col-lg-5">
+							<div class="notes-container">
 								<!-- <h1 id="title">Nuzha Rukiya</h1> -->
 								<form id="addThing" class="clearfix" autocomplete="off" style="max-width:500px;margin-right:auto; margin-left:auto;">
 									<input autofocus id="addText" type="text" placeholder="Add a comment..." />
 									<input id="addButton" type="submit" value="Add">
 								</form>
 								<ul id="toDo" style="max-width:500px;margin-right:auto; margin-left:auto;">
-									<li class="done">
-										<i class="fa fa-close"></i> Buy bananas
-									</li>
-									<li class="done">
-										<i class="fa fa-close"></i> Finish this pen
-									</li>
+									<!-- List items for that student -->
 								</ul>
 							</div>
 						</div>

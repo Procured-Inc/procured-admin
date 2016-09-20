@@ -9,13 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Procured Admin</title>
+    <title>Dashboard - Procured Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -43,11 +47,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Meghana</a>
+                <!-- Link to User Profile -->
+                <a class="navbar-brand" href="index.html"> Meghana</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <!-- <li class="dropdown">
+               <!--  <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
                         <li class="message-preview">
@@ -57,7 +62,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Meghana</strong>
+                                        <h5 class="media-heading"><strong> Meghana</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -72,7 +77,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Meghana</strong>
+                                        <h5 class="media-heading"><strong> Meghana</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -87,7 +92,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Meghana</strong>
+                                        <h5 class="media-heading"><strong> Meghana</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -100,7 +105,7 @@
                         </li>
                     </ul>
                 </li> -->
-               <!--  <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
                         <li>
@@ -128,9 +133,8 @@
                     </ul>
                 </li> -->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Meghana <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  Meghana <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        
                         <li>
                             <a href="admin-prof.html"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
@@ -150,22 +154,27 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
+                    <li class="active">
                         <a href="dashboard.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="create-test.html"><i class="fa fa-fw fa-edit"></i> Create Test</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="admin-prof.html"><i class="fa fa-fw fa-edit"></i> Manage Profile</a>
                     </li>
+                    <!-- DB CHANGE -->
+                    <!-- <li>
+                        <a href="manage-tests.html"><i class="fa fa-fw fa-edit"></i> Manage Tests</a>
+                    </li> -->
+
                     <!-- <li>
                         <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
                     </li>
                     <li>
@@ -187,9 +196,6 @@
                     </li>
                     <li>
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li> -->
                 </ul>
             </div>
@@ -200,189 +206,29 @@
 
             <div class="container-fluid">
 
-                <div class="row">
-                    <div class="col-lg-6">
-
+            <!-- upc tests -->
+            <div class="col-lg-10 col-lg-offset-1">
 
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="page-header">
-                            HR Profile 
-
-                            <!-- submit / edit button -->
-                             <wrapper style="align:centre">
-                            <input type="button" class="btn btn-default"  value="Edit" id="mybutton" name="Edit" onclick="change()" style="margin-left: 57%;"/>
-                            </wrapper>
-                        </h2>
+                    <div class="col-lg-6" style="margin-right:100px;">
+                        <h1 class="page-header">
+                            Upcoming Tests<!-- <small>Overview</small> -->
+                        </h1>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                            <div class="form-group">
-                                <label>Your Name</label>
-                                <input id="company_poc_name" class="form-control info" readonly=true >
-                            </div>
-
-                            <div class="form-group">
-                                <label>Your Email-Id</label>
-                                <input id="company_poc_email_id"  class="form-control info" readonly=true >
-                            </div>
-
-                             <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h4 class="page-header">
-                            Alternate POC
-                        </h4>
-                    </div>
+                <!-- Fill upcoming Tests -->
+                <div id="mt_row" class="row">
+                    
+                   
                 </div>
                 <!-- /.row -->
+                    
+            </div>              
 
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input  id="company_alt_poc_name" class="form-control info" readonly=true>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Email-Id</label>
-                                <input  id="company_alt_poc_email_id" class="form-control info" readonly=true >
-                            </div>
-
-                            <!-- <div class="form-group">
-                                <label>File input</label>
-                                <input type="file">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Checkboxes</label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 1
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 2
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 3
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Inline Checkboxes</label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">1
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">2
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">3
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Radio Buttons</label>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Inline Radio Buttons</label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Selects</label>
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Multiple Selects</label>
-                                <select multiple class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div> -->
-
-
-                    </div>
-                    <div class="col-lg-6">
-                        
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="page-header">
-                            Company Details
-                        </h2>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                             <div class="form-group">
-                                <label class="label-inline">Company Id :: </label>
-                                -Company Id- 
-                            </div>
-
-                            <div class="form-group">
-                                <label>Company Name</label>
-                                <input  id="company_name" class="form-control info" readonly=true >
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Company Email-Id</label>
-                                <input  id="company_email_id" class="form-control info" readonly=true >
-                            </div>
-
-                            <div class="form-group">
-                                <label>Company Description</label>
-                                <textarea  id="company_desc" class="form-control info" rows="3" readonly=true ></textarea>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Company Logo</label>
-                                <input  id="company_logo" type="file" class="info" readonly=true >
-                            </div>
-
-                    </div>
-                </div>
-                <!-- /.row -->
-
+                
             </div>
             <!-- /.container-fluid -->
 
@@ -397,6 +243,13 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+
+
     <!-- oursss -->    
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
@@ -405,9 +258,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
         <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.js"></script>
+    <script src="js/manage-tests.js"></script>
+    <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
 
-        <script src="js/proc-admin.js"></script>
-    
 </body>
 
 </html>
