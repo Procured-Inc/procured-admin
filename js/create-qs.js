@@ -80,23 +80,23 @@ function addQues(){
 								// }
 								// };
 					// 			console.log(test);
-					// 			$.ajax({
-					// 					"url":"http://178.33.132.20:30000/questions/apti",
-					// 					"method" :"POST",
-					// 					"contentType":"application/json",
-					// 					"data" : JSON.stringify(test) ,
-					// 					"processData": false,
-					// 					"dataType" : "json",
-								       	
-					// 				success: function(data) {
-					// 				console.log(data);
-					// 						console.log("SUCCESS");
+									$.ajax({
+											"url":"http://178.33.132.20:30000/questions/apti",
+											"method" :"POST",
+											"contentType":"application/json",
+											"data" : JSON.stringify(test) ,
+											"processData": false,
+											"dataType" : "json",
+									       	
+										success: function(data) {
+										console.log(data);
+												console.log("SUCCESS");
 
-					// 				},error: function(d) {
-					// 					console.log(d);
-					// 					console.log("FAILURE");
-					// 				}
-					// 			});
+										},error: function(d) {
+											console.log(d);
+											console.log("FAILURE");
+										}
+									});
 	    }
 
 }
