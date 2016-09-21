@@ -94,7 +94,7 @@ company1: [
                         +"<td align=\"right\">"+colObj.city+"</td>"
                         +"</tr>"
                         +"<tr>"
-                        +"<td style=\"font-weight:bold;\">No. of Students</td>"
+                        +"<td style=\"font-weight:bold;\">Estimated No. of Students</td>"
                         +"<td align=\"right\">"+colObj.students+"</td>"
                         +"</tr>"
                         +"<tr>"

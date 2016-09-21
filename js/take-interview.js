@@ -6,8 +6,8 @@ var studs= [
    "email_id": "r.nuzha@gmail.com",
    "first_name": "Nuzha",
    "current_cgpa": "3.14",
-   "score_10": "0%",
-   "score_12": "0%",
+   "score_10": "80%",
+   "score_12": "85%",
    "stream": "CSE",
    "course": "B.E.",
    "contact_no": "7896412371",
@@ -37,22 +37,22 @@ var studs= [
    "yop12": "2016"
  },
  {
-   "student_id": "4123",
-   "college_id": "4ABC_123",
-   "email_id": "4yodebu@gmail.com",
-   "first_name": "4Debapriya",
-   "current_cgpa": "44.5",
-   "score_10": "490%",
-   "score_12": "480%",
-   "stream": "4CSE",
+   "student_id": "423",
+   "college_id": "ABC_423",
+   "email_id": "jyoti.sharma@incture.com",
+   "first_name": "Jyoti",
+   "current_cgpa": "9.5",
+   "score_10": "98%",
+   "score_12": "99%",
+   "stream": "ECE",
    "course": "4B.Tech",
    "contact_no": "412345667654",
-   "last_name": "4Das",
-   "dob": "40000-00-00",
-   "board10": "4CBSE",
-   "board12": "4PU",
-   "yop10": "42012",
-   "yop12": "42016"
+   "last_name": "Sharma",
+   "dob": "1993-03-03",
+   "board10": "CBSE",
+   "board12": "CBSE",
+   "yop10": "2012",
+   "yop12": "2016"
  }
 ];
 

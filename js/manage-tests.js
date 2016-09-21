@@ -109,7 +109,7 @@ cityColours(companies);
 				} 
 			}
 			var cool = keys+","+ix;
-			console.log(cool);
+			// console.log(cool);
 	         	var row = 	"<div class=\"col-lg-12\">"
 	                        +"<div class=\"panel\" style=\"border-color:"+col+"; background-color:"+col+";\">"
 	                        +"<div class=\"panel-heading\" style=\"color:#fff;\">"
@@ -206,7 +206,7 @@ function getColour(index){
 function viewDetails(ix,cix){
 	// var data = kx+"_"+objIx;
 	// window.loaction.href="col-details.htm?data="+data;
-	console.log(cix+"Hello"+ix);
+	// console.log(cix+"Hello"+ix);
 	localStorage.setItem('company', ix);
 	localStorage.setItem('college', cix);
 	window.location.href="col-details.html";

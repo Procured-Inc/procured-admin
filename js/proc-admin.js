@@ -32,6 +32,18 @@ colleges: [
    ]
 };
 
+//Set username
+function changeUsername(){
+	var hrn_elms = document.getElementsByName("hr_name");
+	// console.log(hrn_elms);
+	for(var kx in hrn_elms){
+		hrn_elms[kx].textContent = localStorage.getItem('hr_name');
+	}
+}
+
+
+changeUsername();
+
 $(document).ready(function()
 {
          $.each(json.colleges,function(key,value)
@@ -91,7 +103,9 @@ function change() {
 			}	
 		else
 	      {
-	      disable();
+	      		disable();
+	      		localStorage.setItem('hr_name',document.getElementById('company_poc_name').value);
+				changeUsername();
 				$("#mybutton").val("Edit");	
 	      }
 
