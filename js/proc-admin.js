@@ -21,6 +21,13 @@ colleges: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964"
+}, {
+	"name": "International Institute of Information Technology",
+	"city": "Bhubaneswar",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964"
 }
    ]
 };

@@ -369,11 +369,13 @@ input::-moz-focus-outer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #28a7e9;
+  /*background: #28a7e9;*/
+    background: #95a5a6;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #28a7e9;
+    /*background: #28a7e9;*/
+    background: :#95a5a6;
 }
 
 /*checkbox*/

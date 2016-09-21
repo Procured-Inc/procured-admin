@@ -41,36 +41,62 @@ function addQues(){
 				+'<td width=\"10%\">TI_ID</td>'
 				+'<td width=\"50%\">'+$('#ques').val()+'</td>'
 				+'<td width=\"10%\">'+$('#q_1').val()+'</td>'
-				+'<td width=\"10%\">'+$('#q_2').val()+'</td>'
+				+'<td width=\"10%\" '+corAnsCSS+'>'+$('#q_2').val()+'</td>'
 				+'<td width=\"10%\">'+$('#q_3').val()+'</td>'
 				+'<td width=\"10%\">'+$('#q_4').val()+'</td>'
 				+'</tr>';
 
-				var corAns = document.querySelector('input[type="radio"]:checked').id;;
+				var corAns = document.querySelector('input[type="radio"]:checked').parentElement.parentElement.nextElementSibling.children[0].value;
+
 				var test = {
 					"testID": "TI_ID",
-					"ques": JSON.stringify($('#ques').val()),
+					"ques": $('#ques').val(),
 					"correct": corAns,
 					"answers": [
-						JSON.stringify($('#q_1').val()),
-						JSON.stringify($('#q_2').val()),
-						JSON.stringify($('#q_3').val()),
-						JSON.stringify($('#q_4').val())
+						$('#q_1').val(),
+						$('#q_2').val(),
+						$('#q_3').val(),
+						$('#q_4').val()
 					]
 				};
 
 				$("#q_body").append(qrow);
 				ques.apti.push(test);
 
-							// $('#ques').text('');
-							// $('#q_1').text('');
-							// $('#q_2').text('');
-							// $('#q_3').text('');
-							// $('#q_4').text('');
+							$('#ques').val('');
+							$('#q_1').val('');
+							$('#q_2').val('');
+							$('#q_3').val('');
+							$('#q_4').val('');
 
 							clearErr();
 
-			
+								// AJAX
+
+								// var JSONObject = {
+								// "candidateGenDto" : {
+								// "email" : uname,
+								// "password" : passwrd
+								// }
+								// };
+					// 			console.log(test);
+					// 			$.ajax({
+					// 					"url":"http://178.33.132.20:30000/questions/apti",
+					// 					"method" :"POST",
+					// 					"contentType":"application/json",
+					// 					"data" : JSON.stringify(test) ,
+					// 					"processData": false,
+					// 					"dataType" : "json",
+								       	
+					// 				success: function(data) {
+					// 				console.log(data);
+					// 						console.log("SUCCESS");
+
+					// 				},error: function(d) {
+					// 					console.log(d);
+					// 					console.log("FAILURE");
+					// 				}
+					// 			});
 	    }
 
 }

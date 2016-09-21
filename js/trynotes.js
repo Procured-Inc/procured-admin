@@ -14,6 +14,9 @@ $(function() {
       html += $thing;
       html += '</li>';
       $list.prepend(html);
+      //Add it to the student's JSON
+      var ix = parseInt(window.localStorage.getItem('cur_stud'));
+      studs[ix].comments.push($thing);
     }
 
     // updateTitle($list, $title);
