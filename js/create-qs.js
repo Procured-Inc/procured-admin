@@ -2,6 +2,57 @@ var ques = {
 	apti : []
 };
 
+// Populate previous questions
+// var ok;
+function popTable(obj,arr){
+	// console.log("here"+obj);
+	// console.log("here_"+arr[0]);
+	var TI_ID = obj.testID;
+	var qrow= '<tr>'
+				+'<td width=\"10%\">'+TI_ID+'</td>'
+				+'<td width=\"50%\">'+obj.ques+'</td>'
+				+'<td width=\"10%\" name=\"'+TI_ID+'_'+arr[0]+'\">'+arr[0]+'</td>'
+				+'<td width=\"10%\" name=\"'+TI_ID+'_'+arr[1]+'\">'+arr[1]+'</td>'
+				+'<td width=\"10%\" name=\"'+TI_ID+'_'+arr[2]+'\">'+arr[2]+'</td>'
+				+'<td width=\"10%\" name=\"'+TI_ID+'_'+arr[3]+'\">'+arr[3]+'</td>'
+				+'</tr>';
+
+				$("#q_body").append(qrow);
+				document.getElementsByName(TI_ID+'_'+obj.correct)[0].style.backgroundColor = "#dff0d8";
+				document.getElementsByName(TI_ID+'_'+obj.correct)[0].style.fontWeight = "bold";
+				document.getElementsByName(TI_ID+'_'+obj.correct)[0].style.color = "#666B85";
+}
+
+function getQues(){
+
+			var data;
+									$.ajax({
+											"url":"http://178.33.132.20:30000/questions/apti",
+											"method" :"GET",
+											// "contentType":"application/json",
+											"data" : data ,
+											// "processData": false,
+											"dataType" : "json",
+									       	
+										success: function(data) {
+												console.log(data);
+												console.log("SUCCESS");
+												for(var lx in data){
+													// ok=data[lx].answers;
+													// console.log("here"+ok);
+													popTable(data[lx], data[lx].answers);
+												}
+
+
+										},error: function(d) {
+											console.log(d);
+											console.log("FAILURE");
+										}
+									});
+}
+
+getQues();
+
 function addQues(){
 
 	clearErr();
@@ -36,14 +87,17 @@ function addQues(){
 	    	$('#q_4').parent('td').addClass('has-error');
 	    }
 	    if(flag<0){
-	    		var corAnsCSS = " class=\'success\'";
+
+	    		var TI_ID = "TI_ID";
+
+	    		var corAnsCSS = " style=\"background:#dff0d8; font-weight:bold;\" ";
 				var qrow= '<tr>'
-				+'<td width=\"10%\">TI_ID</td>'
+				+'<td width=\"10%\">'+TI_ID+'</td>'
 				+'<td width=\"50%\">'+$('#ques').val()+'</td>'
-				+'<td width=\"10%\">'+$('#q_1').val()+'</td>'
-				+'<td width=\"10%\" '+corAnsCSS+'>'+$('#q_2').val()+'</td>'
-				+'<td width=\"10%\">'+$('#q_3').val()+'</td>'
-				+'<td width=\"10%\">'+$('#q_4').val()+'</td>'
+				+'<td width=\"10%\" name=\"'+TI_ID+'_'+$('#q_1').val()+'\">'+$('#q_1').val()+'</td>'
+				+'<td width=\"10%\" name=\"'+TI_ID+'_'+$('#q_2').val()+'\">'+$('#q_2').val()+'</td>'
+				+'<td width=\"10%\" name=\"'+TI_ID+'_'+$('#q_3').val()+'\">'+$('#q_3').val()+'</td>'
+				+'<td width=\"10%\" name=\"'+TI_ID+'_'+$('#q_4').val()+'\">'+$('#q_4').val()+'</td>'
 				+'</tr>';
 
 				var corAns = document.querySelector('input[type="radio"]:checked').parentElement.parentElement.nextElementSibling.children[0].value;
@@ -61,6 +115,11 @@ function addQues(){
 				};
 
 				$("#q_body").append(qrow);
+				document.getElementsByName(TI_ID+'_'+corAns)[0].style.backgroundColor = "#dff0d8";
+				document.getElementsByName(TI_ID+'_'+corAns)[0].style.fontWeight = "bold";
+				document.getElementsByName(TI_ID+'_'+corAns)[0].style.color = "#666B85";
+				
+
 				ques.apti.push(test);
 
 							$('#ques').val('');
