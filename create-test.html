@@ -237,7 +237,7 @@
 
                             <!-- college names -->
                             <!-- <div class="container-fluid"> -->
-                                <div class="col-lg-2 col-sm-2 col-xs-2" style="margin-top:7px;"><label>College</label></div>
+                                <div class="col-lg-2 col-sm-2 col-xs-2" style="padding-left:0px;margin-top:7px;"><label>College</label></div>
                                 <div class="col-lg-10 col-sm-10 col-xs-10"><select id="ddCollege" class="form-control">
                                     <option>Select College</option>
                                     <option>--------------</option>
@@ -248,7 +248,7 @@
                             <div class="form-group">
                             <div class="row">
                                 <div class="col-lg-12 col-sm-12 col-xs-12" >
-                                    <div class="col-lg-2 col-sm2 col-xs-2" style="margin-top:25px;"><label>Date</label></div>
+                                    <div class="col-lg-2 col-sm2 col-xs-2" style="padding-left:0px;margin-top:25px;"><label>Date</label></div>
                                     <div class="col-lg-10 col-sm-10 col-xs-10" style="padding-left:0px !important;">
                                         <div ng-app="MyApp" class="datepickerdemoBasicUsage" ng-controller="AppCtrl">
                                             <md-content>
@@ -387,13 +387,13 @@
                         <br><!-- <br> -->
                          <div class="row">
                             <div class="col-lg-6 col-sm-6 col-xs-6">
-                                <div class="col-lg-4 col-sm-4 col-xs-4" style="margin-top:12px;"><label>Offered CTC</label></div>
+                                <div class="col-lg-4 col-sm-4 col-xs-4" style="padding-left:0px;margin-top:12px;"><label>Offered CTC</label></div>
                                 <div class="col-lg-8 col-sm-8 col-xs-8">
                                     <input class="form-control" type="text" name="ctc"  placeholder="Enter Amount Here ( lakhs )">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-6 col-xs-6">
-                                <div class="col-lg-2 col-sm-2 col-xs-2" style="margin-top:12px;"><label>Bond</label></div>
+                                <div class="col-lg-2 col-sm-2 col-xs-2" style="padding-left:0px;margin-top:12px;"><label>Bond</label></div>
                                 <div class="col-lg-5 col-sm-5 col-xs-5">
                                     <input class="form-control" type="text" name="bond_time" placeholder="Period ( months )" style="width:100%">
                                 </div>
@@ -404,9 +404,24 @@
                             </div>
                          </div>
 
+                         <br>
+                         <div class="row">
+                            <div class="col-lg-2 col-sm-2 col-xs-2" style="margin-top:7px;"><label>Infrastructure Requirements</label></div>
+                                <div class="col-lg-10 col-sm-10 col-xs-10">
+                                    <textarea class="form-control" rows="5" name="reqs" id="reqs" value="" style="width:calc(100% - 15px);margin:5px"></textarea>
+                                </div>
+                         </div>
+
 
                             <br><br>
-                            <button type="button" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="window.open('res/Questions.xlsx')"">Download Question Template</button>
+
+                        <div class="row" >
+
+                        <!-- <div class="col-lg-1 col-sm-1 col-xs-1"></div> -->
+                            <!-- <div class="col-lg-10 col-sm-10 col-xs-10"> -->
+
+                                <div style="margin-left:18%" >
+                                    <button type="button" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="window.open('res/Questions.xlsx')"">Download Question Template</button>
                             <!-- <button type="file" id="quesUp" class="btn btn-default btn-awesome"">Upload Questions</button> -->
                             
                                 <div class="fileUpload btn btn-default btn-awesome" style="margin-right:10px" >
@@ -415,7 +430,15 @@
                                 </div>
 
 
-                            <button type="submit" id="myBtn" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="getFormat()"><a href="create-qs.html">Submit</a></button>
+                            <button type="submit" id="myBtn" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="getFormat()"><a href="create-qs.html">Submit</a></button>                                    
+                                </div>
+                                    
+                            <!-- </div> -->
+                            <!-- <div class="col-lg-1 col-sm-1 col-xs-1"></div> -->
+
+                            
+                        </div>
+                            
 
                         </form>
 
