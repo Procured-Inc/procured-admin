@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden">
 
 <head>
 
@@ -159,6 +159,9 @@
                     <li>
                         <a href="create-qs.html"><i class="fa fa-fw fa-table"></i> Create Question Set</a>
                     </li>
+                        <li>
+                            <a href="results.html"><i class="fa fa-fw fa-bar-chart"></i> View Results</a>
+                        </li>
                     <li>
                         <a href="take-interview.html"><i class="fa fa-fw fa-filter"></i> View Selected Students</a>
                     </li>
@@ -207,7 +210,8 @@
             <div class="container-fluid">
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5">
 
 
                 <!-- Page Heading -->
@@ -215,11 +219,6 @@
                     <div class="col-lg-12">
                         <h2 class="page-header">
                             HR Profile 
-
-                            <!-- submit / edit button -->
-                             <wrapper style="align:centre">
-                            <input type="button" class="btn btn-default"  value="Edit" id="mybutton" name="Edit" onclick="change()" style="margin-left: 57%;"/>
-                            </wrapper>
                         </h2>
                     </div>
                 </div>
@@ -348,7 +347,7 @@
 
 
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-5">
                         
                 <!-- Page Heading -->
                 <div class="row">
@@ -383,18 +382,28 @@
                             <div class="form-group">
                                 <!-- <label>Company Logo</label> -->
                                 <!-- <input  id="company_logo" type="file" class="info" readonly=true > -->
-                                <div class="fileUpload btn btn-default btn-awesome" >
+                                <div class="fileUpload btn btn-default" style="    margin-top: 12px;">
                                     <span>Upload Company Logo</span>
-                                    <input id="uploadBtn" type="file" class="upload" />
+                                    <input id="upl" type="file" class="upload" />
                                 </div>
                             </div>
 
                     </div>
+                    <div class="col-lg-1"></div>
                 </div>
                 <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
+
+            <!-- submit / edit button -->
+            <div class="row">
+                <div class="col-lg-12">
+                        <!-- <wrapper style="align:center"> -->
+                            <input type="button" class="btn btn-default btn-awesome"  value="Edit" id="mybutton" name="Edit" onclick="change()" style="text-align:center;margin-left:42%;min-width:250px"/>
+                        <!-- </wrapper> -->
+                </div>
+            </div>
 
         </div>
         <!-- /#page-wrapper -->

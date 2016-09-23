@@ -17,3 +17,78 @@ document.getElementById('company_alt_poc_email_id').value = aProf.alt_hr_email;
 document.getElementById('company_name').value = aProf.comp_name;
 document.getElementById('company_email_id').value = aProf.comp_email;
 document.getElementById('company_desc').value = aProf.comp_desc;
+
+/*edit or save form*/
+
+function change() {
+		if($("#mybutton").val()=="Edit")
+			{
+				enable();
+				$("#mybutton").val("Save");
+				$("#mybutton").removeClass("btn-awesome")
+			}	
+		else
+	      {
+	      		disable();
+	      		localStorage.setItem('hr_name',document.getElementById('company_poc_name').value);
+				changeUsername();
+				$("#mybutton").val("Edit");	
+				$("#mybutton").addClass("btn-awesome");
+	      }
+
+}
+
+function enable()
+{
+
+	var len=document.getElementsByClassName("info").length;
+
+	// var code=document.getElementsByClassName("info");
+	// $code.prop("readonly",false);
+
+	for (var i =0;  i <len; i++) {
+		var x=document.getElementsByClassName("info")[i];
+		x.readOnly=false;
+	}
+
+	// document.getElementByClass("info").read=false;
+}
+
+function disable()
+{
+	var len=document.getElementsByClassName("info").length;
+
+	// var code=document.getElementsByClassName("info");
+	// $code.prop("readonly",false);
+
+	for (var i =0;  i <len; i++) {
+		var x=document.getElementsByClassName("info")[i];
+		x.readOnly=true;
+	}
+}
+
+// Shows when Written Test is enabled
+
+function writAlt()
+{
+	if(document.getElementById("cb_wt").checked == false){
+		 $(".wt_opts").hide();
+	}else {
+		$(".wt_opts").show();
+	}
+    // if($('.cb_wt').is(":checked"))   
+    //     $(".wt_opts").show();
+    // if($('.cb_wt').is(":unchecked")) 
+    //     $(".wt_opts").hide();
+}
+
+//Submit form for Create Test
+function sub(){
+	if(document.getElementById("cb_wt").checked == true){
+
+	}
+}
+
+document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+};
