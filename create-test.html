@@ -220,7 +220,7 @@
                 <div class="row">
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6">
-                        <h1 class="page-header" style="padding-top:35px; text-align:center;">
+                        <h1 class="page-header" style="padding-top:35px;text-align:center;">
                             Forms
                         </h1>
                     </div>
@@ -233,7 +233,7 @@
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6">
 
-                        <form role="form">
+                        <form role="form" style="margin-top:27px">
 
                             <!-- college names -->
                             <!-- <div class="container-fluid"> -->
@@ -280,11 +280,19 @@
                                 <!-- 10th -->
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-3 col-xs-3">
-                                        <p>10th Std :: <span id="range10">40</span>%</p>
+                                        <div class="row"  >
+                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:50%;padding-bottom:0px;padding-top:10px;">
+                                                <p>10th Std</p>
+                                            </div>
+                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:40%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:20px;">
+                                                <p><span id="range10">40</span>%</p>
+                                            </div>
+                                        </div>
+                                        <!-- <p class="range-slider__value" style="width:100%">10th Std :: <span id="range10">40</span>%</p> -->
                                     </div>
                                     <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
 
-                                    <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:7px;">
+                                    <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:15px;">
                                         <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,10)"/>
                                     </div>
                                 </div>
@@ -295,28 +303,65 @@
                                 <!-- 12th -->
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-3 col-xs-3">
-                                        <p>12th Std :: <span id="range12">40</span>%</p>
+                                        <div class="row"  >
+                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:50%;padding-bottom:0px;padding-top:10px;">
+                                                <p>12th Std</p>
+                                            </div>
+                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:40%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:20px;">
+                                                <p><span id="range12">40</span>%</p>
+                                            </div>
+                                        </div>
+                                        <!-- <p class="range-slider__value" style="width:100%">10th Std :: <span id="range10">40</span>%</p> -->
                                     </div>
                                     <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
+
+                                    <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:15px;">
+                                        <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,10)"/>
+                                    </div>
+                                </div>
+                               <!--  <div class="row">
+                                    <div class="col-lg-3 col-sm-3 col-xs-3">
+                                        <p class="range-slider__value" style="width:100%">12th Std :: <span class="range-slider__value" id="range12">40</span>%</p>
+                                    </div>
+                                    <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" />
 
                                     <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:7px;">
                                         <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,12)"/>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <br>
 
                                 <!-- College -->
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-3 col-xs-3">
-                                        <p>College CGPA :: <span id="range16">7.75</span></p>
+                                        <div class="row"  >
+                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:50%;padding-bottom:0px;padding-top:10px;">
+                                                <p>College CGPA</p>
+                                            </div>
+                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:40%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:20px;">
+                                                <p><span id="range16">7.75</span></p>
+                                            </div>
+                                        </div>
+                                        <!-- <p class="range-slider__value" style="width:100%">10th Std :: <span id="range10">40</span>%</p> -->
                                     </div>
                                     <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
+
+                                    <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:15px;">
+                                        <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,116"/>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="row">
+                                    <div class="col-lg-3 col-sm-3 col-xs-3">
+                                        <p class="range-slider__value" style="width:100%">College CGPA :: <span class="range-slider__value" id="range16">7.75</span></p>
+                                    </div>
+                                    <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" />
 
                                     <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:7px;">
                                         <input class=" range-slider range-slider__range" type="range" value="7.75" min="0" max="10" step=".25" onchange="showValue(this.value,16)"/>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <br>
                             </div>
