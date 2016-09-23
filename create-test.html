@@ -132,7 +132,7 @@
                         </li>
                     </ul>
                 </li> -->
-                <li class="dropdown">
+                <li class="dropdown" style="float: right;"">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  <div name="hr_name" style="display: inline">Meghana </div> <b class="caret"></b>
                     <ul class="dropdown-menu">
                         
@@ -165,6 +165,9 @@
                     <li>
                         <a href="create-qs.html"><i class="fa fa-fw fa-table"></i> Create Question Set</a>
                     </li>
+                        <li>
+                            <a href="results.html"><i class="fa fa-fw fa-bar-chart"></i> View Results</a>
+                        </li>
                     <li>
                         <a href="take-interview.html"><i class="fa fa-fw fa-filter"></i> View Selected Students</a>
                     </li>
@@ -233,44 +236,88 @@
                         <form role="form">
 
                             <!-- college names -->
-                            <div class="form-group">
-                                <label>College</label>
-                                <select id="ddCollege" class="form-control">
+                            <!-- <div class="container-fluid"> -->
+                                <div class="col-lg-2 col-sm-2 col-xs-2" style="margin-top:7px;"><label>College</label></div>
+                                <div class="col-lg-10 col-sm-10 col-xs-10"><select id="ddCollege" class="form-control">
                                     <option>Select College</option>
                                     <option>--------------</option>
-                                </select>
-                            </div>
-                            <br>
+                                </select></div>
+                            <!-- </div> -->
+                            <br><br><br>
                             <!-- college names -->
                             <div class="form-group">
-                                <label>Date</label>
-                                 <div ng-app="MyApp" class="datepickerdemoBasicUsage" ng-controller="AppCtrl">
-            <md-content>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12" >
+                                    <div class="col-lg-2 col-sm2 col-xs-2" style="margin-top:25px;"><label>Date</label></div>
+                                    <div class="col-lg-10 col-sm-10 col-xs-10" style="padding-left:0px !important;">
+                                        <div ng-app="MyApp" class="datepickerdemoBasicUsage" ng-controller="AppCtrl">
+                                            <md-content>
 
-             <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-            </md-content>
-            </div>
+                                             <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                                            </md-content>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-6 col-sm-6 col-xs-6" > -->
+                                    <!-- <div class="col-lg-4 col-sm-4 col-xs-4" style="margin-top:28px;"><label>Time Slot</label></div>
+                                    <div class="col-lg-8 col-sm-8 col-xs-8" style="padding-left:0px !important;">
+                                        <div ng-app="MyApp" class="datepickerdemoBasicUsage" ng-controller="AppCtrl">
+                                            <md-content>
+
+                                             <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                                            </md-content>
+                                        </div>
+                                    </div> -->
+                                <!-- </div> -->
                             </div>
-                            <br>
+                                 
+                            </div>
+                            <!-- <br><br> -->
                             <!-- marks range -->
-                            <div class="form-group">
+                            <div class="form-group" style="margin-top:50px;">
                                 <label>Select Criteria</label>
                                 <br> <br>
                                 <!-- 10th -->
-                                <p>10th Std :: <span id="range10">40</span>%</p>
-                                <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-3 col-xs-3">
+                                        <p>10th Std :: <span id="range10">40</span>%</p>
+                                    </div>
+                                    <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
 
-                                    <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,10)"/>
-                                    <br>
-                                <!-- 12th -->
-                                <p>12th Std :: <span id="range12">40</span>%</p>
-                                <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,12)" /> -->
-                                <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,12)"/>
+                                    <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:7px;">
+                                        <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,10)"/>
+                                    </div>
+                                </div>
+
                                 <br>
+
+
+                                <!-- 12th -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-3 col-xs-3">
+                                        <p>12th Std :: <span id="range12">40</span>%</p>
+                                    </div>
+                                    <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
+
+                                    <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:7px;">
+                                        <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,12)"/>
+                                    </div>
+                                </div>
+
+                                <br>
+
                                 <!-- College -->
-                                <p>College CGPA :: <span id="range16">7.75</span></p>
-                                <!-- <input type="range" min="0.0" max="10.0" value="7.75" step=".25" onchange="showValue(this.value,16)" /> -->
-                                <input class=" range-slider range-slider__range" type="range" value="7.75" min="0" max="10" step=".25" onchange="showValue(this.value,16)"/>
+                                <div class="row">
+                                    <div class="col-lg-3 col-sm-3 col-xs-3">
+                                        <p>College CGPA :: <span id="range16">7.75</span></p>
+                                    </div>
+                                    <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
+
+                                    <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:7px;">
+                                        <input class=" range-slider range-slider__range" type="range" value="7.75" min="0" max="10" step=".25" onchange="showValue(this.value,16)"/>
+                                    </div>
+                                </div>
+
                                 <br>
                             </div>
 
@@ -280,56 +327,92 @@
                                 <label>Test Format</label>
                                  
                                 <div class="checkbox" style="padding-left:18px;padding-top:13px;">
-  <p>
-    <input type="checkbox" id="cb_wt" name="cb_wt"  checked onchange="writAlt()" />
-    <label for="cb_wt" id="1">Written Test</label>
+                                  <p>
+                                    <input type="checkbox" id="cb_wt" name="cb_wt"  checked onchange="writAlt()" />
+                                    <label for="cb_wt" id="1">Written Test</label>
 
-    <div class="wt_opts">
-                <p>
-                    <input type="checkbox" id="cb_wt_apti" value="apti"/>
-                    <label for="cb_wt_apti">Aptitude</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="cb_wt_bev"/>
-                    <label for="cb_wt_bev">Behavioral</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="cb_wt_reas"/>
-                    <label for="cb_wt_reas">Reasoning</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="cb_wt_tech"/>
-                    <label for="cb_wt_tech">Technical</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="cb_wt_verb"/>
-                    <label for="cb_wt_verb">Verbal</label>
-                </p>
-    </div>
-  </p>
-  <p>
-    <input type="checkbox" id="cb_gd"/>
-    <label for="cb_gd">Group Discussion</label>
-  </p>
-  <p>
-    <input type="checkbox" id="cb_ti" />
-    <label for="cb_ti" id="3" style="font-weight: normal;"">Technical Interview</label>
-  </p>
-  <p>
-    <input type="checkbox" id="cb_hri"/>
-    <label for="cb_hri" id="4" style="font-weight: normal;"">HR Interview</label>
-  </p>
-  </div>
+                                    <div class="wt_opts">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-sm-4 col-xs-4">
+                                                <p>
+                                                    <input type="checkbox" id="cb_wt_apti" value="apti"/>
+                                                    <label for="cb_wt_apti">Aptitude</label>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-4 col-xs-4">
+                                                <p>
+                                                    <input type="checkbox" id="cb_wt_bev"/>
+                                                    <label for="cb_wt_bev">Behavioral</label>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-4 col-xs-4">
+                                                <p>
+                                                    <input type="checkbox" id="cb_wt_reas"/>
+                                                    <label for="cb_wt_reas">Reasoning</label>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-sm-4 col-xs-4">
+                                                <p>
+                                                    <input type="checkbox" id="cb_wt_tech"/>
+                                                    <label for="cb_wt_tech">Technical</label>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-4 col-xs-4">
+                                                <p>
+                                                    <input type="checkbox" id="cb_wt_verb"/>
+                                                    <label for="cb_wt_verb">Verbal</label>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-4 col-sm-4 col-xs-4">
+                                            </div>
+                                        </div>       
+                                    </div>
+                                </p>
+                              <p>
+                                <input type="checkbox" id="cb_gd"/>
+                                <label for="cb_gd">Group Discussion</label>
+                              </p>
+                              <p>
+                                <input type="checkbox" id="cb_ti" />
+                                <label for="cb_ti" id="3" style="font-weight: normal;"">Technical Interview</label>
+                              </p>
+                              <p>
+                                <input type="checkbox" id="cb_hri"/>
+                                <label for="cb_hri" id="4" style="font-weight: normal;"">HR Interview</label>
+                              </p>
+                         </div>
+                        
+                        <br><!-- <br> -->
+                         <div class="row">
+                            <div class="col-lg-6 col-sm-6 col-xs-6">
+                                <div class="col-lg-4 col-sm-4 col-xs-4" style="margin-top:12px;"><label>Offered CTC</label></div>
+                                <div class="col-lg-8 col-sm-8 col-xs-8">
+                                    <input class="form-control" type="text" name="ctc"  placeholder="Enter Amount Here ( lakhs )">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-xs-6">
+                                <div class="col-lg-2 col-sm-2 col-xs-2" style="margin-top:12px;"><label>Bond</label></div>
+                                <div class="col-lg-5 col-sm-5 col-xs-5">
+                                    <input class="form-control" type="text" name="bond_time" placeholder="Period ( months )" style="width:100%">
+                                </div>
+                                <!-- <div class="col-lg-1 col-sm-1 col-xs-1"></div> -->
+                                <div class="col-lg-5 col-sm-5 col-xs-5">
+                                    <input class="form-control" type="text" name="bond_amt" placeholder="Amount ( lakhs )" style="width:100%">
+                                </div>
+                            </div>
+                         </div>
 
 
                             <br><br>
                             <button type="button" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="window.open('res/Questions.xlsx')"">Download Question Template</button>
                             <!-- <button type="file" id="quesUp" class="btn btn-default btn-awesome"">Upload Questions</button> -->
                             
-<div class="fileUpload btn btn-default btn-awesome" style="margin-right:10px" >
-    <span>Upload Questions</span>
-    <input id="uploadBtn" type="file" class="upload" />
-</div>
+                                <div class="fileUpload btn btn-default btn-awesome" style="margin-right:10px" >
+                                    <span>Upload Questions</span>
+                                    <input id="uploadBtn" type="file" class="upload" />
+                                </div>
 
 
                             <button type="submit" id="myBtn" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="getFormat()"><a href="create-qs.html">Submit</a></button>
