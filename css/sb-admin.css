@@ -474,6 +474,7 @@ label:hover:before {
 .fileUpload {
     position: relative;
     overflow: hidden;
+    border-color: #28a7e9
     /*margin: 10px;*/
 }
 .fileUpload input.upload {
