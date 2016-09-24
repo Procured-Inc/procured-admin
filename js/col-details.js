@@ -8,9 +8,10 @@ company1: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"09",
-	"dot_day":"27",
+	"date_of_test":"2016-09-27",
+	// "dot_year":"2016",
+	// "dot_month":"09",
+	// "dot_day":"27",
 	"comp":1
 }, {
 	"name": "National Institute of Technology",
@@ -19,9 +20,10 @@ company1: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"09",
-	"dot_day":"27",
+	"date_of_test":"2016-09-27",
+	// "dot_year":"2016",
+	// "dot_month":"09",
+	// "dot_day":"27",
 	"comp":1
 }, {
 	"name": "Maulana Azad National Institute of Technology",
@@ -30,23 +32,61 @@ company1: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"11",
-	"dot_day":"17",
+	"date_of_test":"2016-11-17",
+	// "dot_year":"2016",
+	// "dot_month":"11",
+	// "dot_day":"17",
 	"comp":1
 }
    ],
    company2: [
      {
+	"name": "Nitte Meenakshi Institute of Technology",
+	"city": "Bangalore",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964",
+	"date_of_test":"2016-09-27",
+	// "dot_year":"2016",
+	// "dot_month":"09",
+	// "dot_day":"27",
+	"comp":2
+}, {
+	"name": "National Institute of Technology",
+	"city": "Surat",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964",
+	"date_of_test":"2016-09-27",
+	// "dot_year":"2016",
+	// "dot_month":"09",
+	// "dot_day":"27",
+	"comp":2
+}, {
 	"name": "Nitte Meenakshi AM Institute of Technology",
 	"city": "Mangalore",
 	"students": "1500",
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"09",
-	"dot_day":"29",
+	"date_of_test":"2016-09-29",
+	// "dot_year":"2021",
+	// "dot_month":"09",
+	// "dot_day":"29",
+	"comp":2
+},  {
+	"name": "Maulana Azad National Institute of Technology",
+	"city": "Bhopal",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964",
+	"date_of_test":"2021-11-17",
+	// "dot_year":"2016",
+	// "dot_month":"11",
+	// "dot_day":"17",
 	"comp":2
 }, {
 	"name": "National Institute of Technology",
@@ -55,32 +95,37 @@ company1: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2017",
-	"dot_month":"01",
-	"dot_day":"27",
+	"date_of_test":"2018-01-27",
+	// "dot_year":"2018",
+	// "dot_month":"01",
+	// "dot_day":"27",
 	"comp":2
 }, {
-	"name": "Maulana Azad National Institute of Technology",
-	"city": "Bhopal",
+	"name": "Hardware Institute of Technology",
+	"city": "Surat",
 	"students": "1500",
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"10",
-	"dot_day":"17",
+	"date_of_test":"2017-11-7",
+	// "dot_year":"2016",
+	// "dot_month":"10",
+	// "dot_day":"17",
 	"comp":2
 }
    ]
 };
 
 //col-details
+var comp = localStorage.getItem('cur_comp');
 
 	var colObj;
 	var company=localStorage.getItem("company");
 	var college=localStorage.getItem("college");
 	$.each(companies, function(keys, values){
-		if(values[company].comp==college) colObj=values[company];
+		if(keys==comp){
+			if(values[company].comp==college) colObj=values[company];
+		}
 	});
 
 	var dets = 	"<br>"
