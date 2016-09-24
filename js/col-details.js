@@ -119,6 +119,18 @@ company1: [
 //col-details
 var comp = localStorage.getItem('cur_comp');
 
+//set json
+$.each(companies, function(keys, values){
+	if(keys==comp){
+	for(var kx in values){
+		var date = new Date (values[kx].date_of_test);
+		values[kx].dot_day=date.getDate();
+		values[kx].dot_month=date.getMonth()+1;
+		values[kx].dot_year=date.getYear()+1900;
+	}
+}
+});
+
 	var colObj;
 	var company=localStorage.getItem("company");
 	var college=localStorage.getItem("college");
@@ -166,40 +178,40 @@ var comp = localStorage.getItem('cur_comp');
 
 function month(num){
 	switch(num){
-		case "01":
+		case 01:
 	       return ("January");
 	       break;
-	case "02":
+	case 02:
 	       return ("February");
 	       break;
-	case "03":
+	case 03:
 	       return ("March");
 	       break;
-	case "04":
+	case 04:
 	       return ("April");
 	       break;
-	case "05":
+	case 05:
 	       return ("May");
 	       break;
-	case "06":
+	case 06:
 	       return ("June");
 	       break;
-	case "07":
+	case 07:
 	       return ("July");
 	       break;
-	case "08":
+	case 08:
 	       return ("August");
 	       break;
-	case "09":
+	case 09:
 	       return ("September");
 	       break;
-	case "10":
+	case 10:
 	       return ("October");
 	       break;
-	case "11":
+	case 11:
 	       return ("November");
 	       break;
-	case "12":
+	case 12:
 	       return ("December");
 	       break;
 	}
