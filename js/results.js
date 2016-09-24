@@ -38,29 +38,38 @@ var data = [
 // 			+"</tr>";
 
 // function makeTable(){
-	for(var ix in data){
-		var trow = "<tr>"
-						+"<td>"+data[ix].sid+"</td>"
-						+"<td>"+data[ix].name+"</td>"
-						+"<td>"+data[ix].score+"</td>"
-						+"</tr>";
-				$('#t_body').append(trow);
-	}
+
 // }
 // makeTable();
 
-
-// sort by score
 var switcher = Boolean(0);
+var arr = ["sid","name","score"];
+var chosen;
 
 function compD(b,a){
-		return a.score-b.score;
+		switch(chosen){
+			case 0: return b.sid-a.sid;
+					break;
+			case 1: return a.name.localeCompare(b.name);
+					break;
+			case 2: return a.score-b.score;
+					break;
+		}
+		// return a.score-b.score;
 }
 function compA(a,b){
-		return a.score-b.score;
+		switch(chosen){
+			case 0: return b.sid-a.sid;
+					break;
+			case 1: return a.name.localeCompare(b.name);
+					break;
+			case 2: return a.score-b.score;
+					break;
+		}
 }
 
-function sortByScore(){
+function sortBy(val){
+	chosen=val;
 	switcher=(!switcher);
 	if(switcher){
 		data.sort(compD);
@@ -78,6 +87,17 @@ function sortByScore(){
 				$('#t_body').append(trow);
 	}
 }
+
+	// for(var ix in data){
+	// 	var trow = "<tr>"
+	// 					+"<td>"+data[ix].sid+"</td>"
+	// 					+"<td>"+data[ix].name+"</td>"
+	// 					+"<td>"+data[ix].score+"</td>"
+	// 					+"</tr>";
+	// 			$('#t_body').append(trow);
+	// }
+
+sortBy(0);
 // function sortByScore(){
 //        var rkl = document.getElementById('t_body').children.length;
 //        for(var jx=0;jx<rkl-1;jx++){
