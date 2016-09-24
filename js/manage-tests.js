@@ -8,9 +8,10 @@ company1: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"09",
-	"dot_day":"27",
+	"date_of_test":"2016-09-27",
+	// "dot_year":"2016",
+	// "dot_month":"09",
+	// "dot_day":"27",
 	"comp":1
 }, {
 	"name": "National Institute of Technology",
@@ -19,9 +20,10 @@ company1: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"09",
-	"dot_day":"27",
+	"date_of_test":"2016-09-27",
+	// "dot_year":"2016",
+	// "dot_month":"09",
+	// "dot_day":"27",
 	"comp":1
 }, {
 	"name": "Maulana Azad National Institute of Technology",
@@ -30,23 +32,61 @@ company1: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"11",
-	"dot_day":"17",
+	"date_of_test":"2016-11-17",
+	// "dot_year":"2016",
+	// "dot_month":"11",
+	// "dot_day":"17",
 	"comp":1
 }
    ],
    company2: [
      {
+	"name": "Nitte Meenakshi Institute of Technology",
+	"city": "Bangalore",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964",
+	"date_of_test":"2016-09-27",
+	// "dot_year":"2016",
+	// "dot_month":"09",
+	// "dot_day":"27",
+	"comp":2
+}, {
+	"name": "National Institute of Technology",
+	"city": "Surat",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964",
+	"date_of_test":"2016-09-27",
+	// "dot_year":"2016",
+	// "dot_month":"09",
+	// "dot_day":"27",
+	"comp":2
+}, {
 	"name": "Nitte Meenakshi AM Institute of Technology",
 	"city": "Mangalore",
 	"students": "1500",
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2021",
-	"dot_month":"09",
-	"dot_day":"29",
+	"date_of_test":"2016-09-29",
+	// "dot_year":"2021",
+	// "dot_month":"09",
+	// "dot_day":"29",
+	"comp":2
+},  {
+	"name": "Maulana Azad National Institute of Technology",
+	"city": "Bhopal",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964",
+	"date_of_test":"2021-11-17",
+	// "dot_year":"2016",
+	// "dot_month":"11",
+	// "dot_day":"17",
 	"comp":2
 }, {
 	"name": "National Institute of Technology",
@@ -55,41 +95,78 @@ company1: [
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2018",
-	"dot_month":"01",
-	"dot_day":"27",
+	"date_of_test":"2018-01-27",
+	// "dot_year":"2018",
+	// "dot_month":"01",
+	// "dot_day":"27",
 	"comp":2
 }, {
-	"name": "Maulana Azad National Institute of Technology",
-	"city": "Bhopal",
+	"name": "Hardware Institute of Technology",
+	"city": "Surat",
 	"students": "1500",
 	"poc_name": "Srijit Nair",
 	"poc_email": "srijit.nair@gmail.com",
 	"poc_phno":"9856272964",
-	"dot_year":"2016",
-	"dot_month":"10",
-	"dot_day":"17",
+	"date_of_test":"2017-11-7",
+	// "dot_year":"2016",
+	// "dot_month":"10",
+	// "dot_day":"17",
 	"comp":2
 }
    ]
 };
 
+var cur_comp="company2";
+
+//set json
+$.each(companies, function(keys, values){
+	if(keys==cur_comp){
+	for(var kx in values){
+		var date = new Date (values[kx].date_of_test);
+		values[kx].dot_day=date.getDate();
+		values[kx].dot_month=date.getMonth()+1;
+		values[kx].dot_year=date.getYear()+1900;
+	}
+}
+});
+
 //manage-tests
 
 //sets a different row colour according to the city
+// var cityList=[];
+// function cityColours(companies){
+// 	var count=0;
+// 	$.each(companies, function(keys, values){
+// 		for(var ix in values){
+// 			if(values[ix].name != "cur_date"){
+// 				var flag=1;
+// 				for(var iy in cityList){
+// 					if(cityList[iy][0] == values[ix].city) flag--;
+// 				}
+// 				if(flag>0){
+// 					cityList.push([values[ix].city, getColour(count)]);
+// 					count++;
+// 				}
+// 			}
+// 		}
+// 	});
+// }
+
 var cityList=[];
 function cityColours(companies){
 	var count=0;
 	$.each(companies, function(keys, values){
+		if(keys==cur_comp){
 		for(var ix in values){
 			if(values[ix].name != "cur_date"){
-			var flag=1;
-			for(var iy in cityList){
-				if(cityList[iy][0] == values[ix].city) flag--;
-			}
-			if(flag>0){
-				cityList.push([values[ix].city, getColour(count)]);
-				count++;
+				var flag=1;
+				for(var iy in cityList){
+					if(cityList[iy][0] == values[ix].city) flag--;
+				}
+				if(flag>0){
+					cityList.push([values[ix].city, getColour(count)]);
+					count++;
+				}
 			}
 		}
 	}
@@ -98,7 +175,19 @@ function cityColours(companies){
 
 cityColours(companies);
 
+// Sort according to the date
+function cusort(b,a) {
+    return new Date(a.date_of_test).getTime() - new Date(b.date_of_test).getTime();
+}
+
+// for that company
+
+companies.company2.sort(cusort);
+
+// display companies
+
 	$.each(companies, function(keys, values){
+		if(keys==cur_comp){
 		for(var ix in values){
 			if(values[ix].name != "cur_date"){
 				col="";
@@ -135,44 +224,45 @@ cityColours(companies);
 				 $("#mt_row").prepend(row);
 			}
 		}
+	}
 	});
 
 function month(num){
 	switch(num){
-		case "01":
+		case 1:
 	       return ("January");
 	       break;
-	case "02":
+	case 2:
 	       return ("February");
 	       break;
-	case "03":
+	case 3:
 	       return ("March");
 	       break;
-	case "04":
+	case 4:
 	       return ("April");
 	       break;
-	case "05":
+	case 5:
 	       return ("May");
 	       break;
-	case "06":
+	case 6:
 	       return ("June");
 	       break;
-	case "07":
+	case 7:
 	       return ("July");
 	       break;
-	case "08":
+	case 8:
 	       return ("August");
 	       break;
-	case "09":
+	case 9:
 	       return ("September");
 	       break;
-	case "10":
+	case 10:
 	       return ("October");
 	       break;
-	case "11":
+	case 11:
 	       return ("November");
 	       break;
-	case "12":
+	case 12:
 	       return ("December");
 	       break;
 	}
@@ -186,11 +276,11 @@ function getColour(index){
 				break;
 		case 2 : return "#2ecc71";
 				break;
-		case 3 : return "#1abc9c";
+		case 3 : return "#3498db";
 				break;
 		case 4 : return "#9b59b6";
 				break;
-		case 5 : return "#95a5a6";
+		case 5 : return "#e67e22";
 				break;
 		// case 6 : return "#34495e";
 		// 		break;
@@ -212,3 +302,10 @@ function viewDetails(ix,cix){
 	window.location.href="col-details.html";
 }
 
+//Sort according to date
+
+// function sort()}{
+// 	$.each(companies, function(keys, values){
+
+// 	});
+// }
