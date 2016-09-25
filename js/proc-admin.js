@@ -44,14 +44,14 @@ function changeUsername(){
 
 changeUsername();
 
-$(document).ready(function()
-{
-         $.each(json.colleges,function(key,value)
-         {
-             var option = "<option value=\""+value.name+ "\"> "+value.name+"</option>";
-			 $("#ddCollege").append(option);
-         });
-});
+// $(document).ready(function()
+// {
+//          $.each(json.colleges,function(key,value)
+//          {
+//              var option = "<option value=\""+value.name+ "\"> "+value.name+"</option>";
+// 			 $("#ddCollege").append(option);
+//          });
+// });
 
 function showValue(newValue,type){
 	var range="";

@@ -12,15 +12,88 @@ var ct = {
 	"test_id":""
 }
 
+var json = {
+colleges: [
+     {
+	"name": "Nitte Meenakshi Institute of Technology",
+	"city": "Bangalore",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964"
+}, {
+	"name": "National Institute of Technology - Surat",
+	"city": "Surat",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964"
+}, {
+	"name": "Maulana Azad National Institute of Technology",
+	"city": "Bhopal",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964"
+}, {
+	"name": "International Institute of Information Technology",
+	"city": "Bhubaneswar",
+	"students": "1500",
+	"poc_name": "Srijit Nair",
+	"poc_email": "srijit.nair@gmail.com",
+	"poc_phno":"9856272964"
+}
+   ]
+};
+
+// $(document).ready(function()
+// {
+//          $.each(json.colleges,function(key,value)
+//          {
+//              var option = "<option value=\""+value.name+ "\"> "+value.name+"</option>";
+// 			 $("#ddCollege").append(option);
+//          });
+// });
+
+function getColleges(){
+	var colleges={};
+									$.ajax({
+											"url":"http://192.168.1.147:20000/admin/college/details/all",
+											"method" :"GET",
+											"contentType":"application/json",
+											"data" : colleges ,
+											// "processData": false,
+											"dataType" : "json",
+									       	
+										success: function(colleges) {
+												console.log(colleges);
+												console.log("SUCCESS");
+
+												$.each(colleges,function(key,value)
+										         {
+										             var option = "<option value=\""+value.college_name+ "\"> "+value.college_name+"</option>";
+													 $("#ddCollege").append(option);
+         										});
+
+
+										},error: function(d) {
+											console.log(d);
+											console.log("FAILURE");
+										}
+									});
+}
+getColleges();
+
+
 function getFormat(){
 
 	var apti = document.getElementById('cb_wt_apti');
 	var bev = document.getElementById('cb_wt_bev');
-	var reas = document.getElementById('cb_wt_psycho');
+	var psycho = document.getElementById('cb_wt_psycho');
 	var tech = document.getElementById('cb_wt_tech');
 	var verb = document.getElementById('cb_wt_verb');
 
-	var format =[apti, bev, reas, tech, verb];
+	var format =[apti, bev, psycho, tech, verb];
 
 	var ques= {"apti":"no", "bev":"no", "psycho":"no", "tech":"no", "verb":"no"};
 
@@ -63,3 +136,4 @@ function onSubmit(){
 
 	window.location.href = "create-qs.html";
 }
+

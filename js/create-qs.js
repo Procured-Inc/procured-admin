@@ -30,7 +30,9 @@ var cur = ques1[fin];
 $("#topic").text(fullFormat[qfix]);
 
 function endCreateQb(){
-	;
+	window.location.href="qb-done.html";
+	console.log("End wb");
+
 }
 
 
@@ -86,6 +88,8 @@ function getQues(){
 
 getQues();
 
+localStorage.setItem('qid',0);
+
 function addQues(){
 
 	clearErr();
@@ -137,7 +141,7 @@ function addQues(){
 
 				var test = {
 					"testID": "TI_ID",
-    				"qID": 1,
+    				"qID": localStorage.getItem('qid')+1,
 					"ques": $('#ques').val(),
 					"correct": corAns,
 					"answers": [
@@ -207,6 +211,7 @@ function clearErr(){
 function nextqb(){
 	// console.log("Hello");
 	if(qfix<4) {
+		if(qfix==0) document.getElementById("fa_left").style.color = "rgb(40, 63, 113)";
 		localStorage.setItem('qfix',++qfix);
 		var fin = getCur();
 		localStorage.setItem('fin',fin);
@@ -225,5 +230,5 @@ function prevqb(){
 		var cur = ques1[fin];
 		$("#topic").text(fullFormat[qfix]);
 		getQues();
-	}else endCreateQb();
+	}else document.getElementById("fa_left").style.color = "gainsboro";
 }
