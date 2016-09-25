@@ -26,7 +26,32 @@ var data = [
 	},
 	{
 		"name":"Debapriya",
-		"sid":"451",
+		"sid":"122",
+		"score":"46"
+	},
+	{
+		"name":"Manogna",
+		"sid":"144",
+		"score":"73"
+	},
+	{
+		"name":"Sujit",
+		"sid":"346",
+		"score":"54"
+	},
+	{
+		"name":"Ashish",
+		"sid":"745",
+		"score":"64"
+	},
+	{
+		"name":"Amarya",
+		"sid":"534",
+		"score":"74"
+	},
+	{
+		"name":"Freya",
+		"sid":"235",
 		"score":"46"
 	}
 ];
