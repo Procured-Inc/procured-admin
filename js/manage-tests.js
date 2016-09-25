@@ -117,6 +117,7 @@ company1: [
 };
 
 var cur_comp="company2";
+localStorage.setItem('cur_comp',cur_comp);
 
 //set json
 $.each(companies, function(keys, values){

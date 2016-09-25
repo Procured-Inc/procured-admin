@@ -93,6 +93,7 @@ var ix=0;
 
 window.localStorage.setItem('cur_stud',JSON.stringify(ix));
 
+
 // var s_name = "<table>"
 //                 +"<thead>"
 //                 +"<tr>"
@@ -112,18 +113,19 @@ window.localStorage.setItem('cur_stud',JSON.stringify(ix));
 //                 +"</table>";
 
 var s_name ="<h2 id=\"col_name\" style=\"text-align: center; padding-top: 80px;\">"
-    +"<div ><h4 class=\"prev\" onclick=\"prevS()\" > << </h4></div>"
+    +"<div ><h4 class=\"prev\" onclick=\"prevS()\" > <i id=\"fa_left\" class=\"fa fa-arrow-circle-o-left\" style=\"color:rgb(40, 63, 113)\"></i>  </h4></div>"
     +studs[parseInt(localStorage.getItem('cur_stud'))].first_name+" "+studs[parseInt(localStorage.getItem('cur_stud'))].last_name
-    +"<div ><h4 class=\"next\" onclick=\"nextS()\" > >> </h4></div>"
+    +"<div ><h4 class=\"next\" onclick=\"nextS()\" > <i id=\"fa_right\" class=\"fa fa-arrow-circle-o-right\" style=\"color:rgb(40, 63, 113)\"></i> </h4></div>"
     +"</h2>";
 
          $("#s_name").prepend(s_name);
+if(ix==0) document.getElementById("fa_left").style.color = "gainsboro";
 
 // Populate buttons with student list
 
 
 for(var jx in studs){
-    var sl_but = "<div class=\"waves-effect waves-light btn-large blue darken-2 stud-list\" style=\"margin-left: 25%;\" onclick=\"changeStud("+jx+")\" >"
+    var sl_but = "<div id=\"waves_"+jx+"\" class=\"waves-effect waves-light btn-large blue darken-2 stud-list\" style=\"margin-left: 18%;\" onclick=\"changeStud("+jx+")\" >"
     +studs[jx].first_name+" "+studs[jx].last_name+"</div>";
     $("#stud_list").append(sl_but);
     studs[jx]["comments"] = [];
@@ -189,6 +191,7 @@ var dets =  //"<br>"
              });        
 
 //Change stud when button is clicked
+document.getElementById("waves_0").style.backgroundColor = "#283F71"
 function changeStud(sel){
   ix=sel;
 
@@ -201,11 +204,20 @@ function changeStud(sel){
   // }
 
       $("#col_name").empty();
-        var stit = "<div ><h4 class=\"prev\" onclick=\"prevS()\" > << </h4></div>"
+        var stit = "<div ><h4 class=\"prev\" onclick=\"prevS()\" > <i id=\"fa_left\" class=\"fa fa-arrow-circle-o-left\" style=\"color:rgb(40, 63, 113)\"></i>  </h4></div>"
         +studs[sel].first_name+" "+studs[sel].last_name
-        +"<div ><h4 class=\"next\" onclick=\"nextS()\" > >> </h4></div>";
+        +"<div ><h4 class=\"next\" onclick=\"nextS()\" > <i id=\"fa_right\" class=\"fa fa-arrow-circle-o-right\" style=\"color:rgb(40, 63, 113)\"></i> </h4></div>";
       $("#col_name").append(stit);
 
+      if(ix==0)  document.getElementById("fa_left").style.color = "gainsboro";
+      else if(ix==(studs.length-1))  document.getElementById("fa_right").style.color = "gainsboro";
+
+      var list = document.getElementById("stud_list").children.length;
+      for(var kx =0; kx<list;kx++){
+          document.getElementById("waves_"+kx).style.backgroundColor = "#28a7e9"
+      }
+
+      document.getElementById("waves_"+sel).style.backgroundColor = "#283F71"
       $("#stb_s_10").text(studs[sel].score_10);
       $("#stb_s_12").text(studs[sel].score_12);
       $("#stb_stream").text(studs[sel].stream);
@@ -234,15 +246,21 @@ function prevS(){
     ix-=1;
     window.localStorage.setItem('cur_stud',JSON.stringify(ix));
     changeStud(ix);
+  }else{
+    document.getElementById("fa_left").style.color = "gainsboro";
   }
 }
-
+var gp;
 function nextS(){
   var ix = parseInt(window.localStorage.getItem('cur_stud'));
   if(ix<studs.length-1){
+    console.log(ix);
+    // if(ix==(studs.length-2))  document.getElementById("fa_right").style.color = "gainsboro";
+    gp=ix;
     ix+=1;
     console.log("nextS"+ix);
     window.localStorage.setItem('cur_stud',JSON.stringify(ix));
     changeStud(ix);
+    if(ix==(studs.length-1))  document.getElementById("fa_right").style.color = "gainsboro";
   }
 }

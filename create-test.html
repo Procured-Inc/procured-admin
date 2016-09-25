@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- db change -->
-                <a class="navbar-brand" href="dashboard.html">Hello, <div name="hr_name" style="display: inline">Meghana </div></a>
+                <a class="navbar-brand" href="dashboard.html" style="padding:0px"> <img src="res/logo.png"/ style="width:auto; max-width:80%; height:auto;max-height:80%; margin-top:8px; margin-left:23px"></a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -233,7 +233,7 @@
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6">
 
-                        <form role="form" style="margin-top:27px">
+                        <div style="margin-top:27px">
 
                             <!-- college names -->
                             <!-- <div class="container-fluid"> -->
@@ -281,10 +281,10 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-3 col-xs-3">
                                         <div class="row"  >
-                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:50%;padding-bottom:0px;padding-top:10px;">
+                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:60%;padding-bottom:0px;padding-top:10px;">
                                                 <p>10th Std</p>
                                             </div>
-                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:40%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:20px;">
+                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:30%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:17px;">
                                                 <p><span id="range10">40</span>%</p>
                                             </div>
                                         </div>
@@ -304,10 +304,10 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-3 col-xs-3">
                                         <div class="row"  >
-                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:50%;padding-bottom:0px;padding-top:10px;">
+                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:60%;padding-bottom:0px;padding-top:10px;">
                                                 <p>12th Std</p>
                                             </div>
-                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:40%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:20px;">
+                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:30%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:17px;">
                                                 <p><span id="range12">40</span>%</p>
                                             </div>
                                         </div>
@@ -316,7 +316,7 @@
                                     <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
 
                                     <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:15px;">
-                                        <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,10)"/>
+                                        <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,12)"/>
                                     </div>
                                 </div>
                                <!--  <div class="row">
@@ -336,10 +336,10 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-3 col-xs-3">
                                         <div class="row"  >
-                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:50%;padding-bottom:0px;padding-top:10px;">
+                                            <div class="col-lg-7 col-sm-7 col-xs-7  range-slider__value" style="width:60%;padding-bottom:0px;padding-top:10px;">
                                                 <p>College CGPA</p>
                                             </div>
-                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:40%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:20px;">
+                                            <div class="col-lg-5 col-sm-5 col-xs-5  range-slider__value" style="width:30%;padding-bottom:0px;padding-top:10px;background: #28a7e9;font-size:17px;">
                                                 <p><span id="range16">7.75</span></p>
                                             </div>
                                         </div>
@@ -348,7 +348,7 @@
                                     <!-- <input type="range" min="0" max="100" value="40" step="5" onchange="showValue(this.value,10)" /> -->
 
                                     <div class="col-lg-9 col-sm-9 col-xs-9" style="margin-top:15px;">
-                                        <input class=" range-slider range-slider__range" type="range" value="40" min="0" max="100" step="5" onchange="showValue(this.value,116"/>
+                                        <input class=" range-slider range-slider__range" type="range" value="7.75" min="0" max="10" step=".25" onchange="showValue(this.value,16)"/>
                                     </div>
                                 </div>
 
@@ -373,7 +373,7 @@
                                  
                                 <div class="checkbox" style="padding-left:18px;padding-top:13px;">
                                   <p>
-                                    <input type="checkbox" id="cb_wt" name="cb_wt"  checked onchange="writAlt()" />
+                                    <input type="checkbox" id="cb_wt" name="cb_wt" checked="true" disabled="disabled"  /><!--  onchange="writAlt()" -->
                                     <label for="cb_wt" id="1">Written Test</label>
 
                                     <div class="wt_opts">
@@ -386,27 +386,27 @@
                                             </div>
                                             <div class="col-lg-4 col-sm-4 col-xs-4">
                                                 <p>
-                                                    <input type="checkbox" id="cb_wt_bev"/>
+                                                    <input type="checkbox" id="cb_wt_bev" value="bev"/>
                                                     <label for="cb_wt_bev">Behavioral</label>
                                                 </p>
                                             </div>
                                             <div class="col-lg-4 col-sm-4 col-xs-4">
                                                 <p>
-                                                    <input type="checkbox" id="cb_wt_reas"/>
-                                                    <label for="cb_wt_reas">Reasoning</label>
+                                                    <input type="checkbox" id="cb_wt_psycho" value="reas"/>
+                                                    <label for="cb_wt_psycho">Psychometric</label>
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-4 col-sm-4 col-xs-4">
                                                 <p>
-                                                    <input type="checkbox" id="cb_wt_tech"/>
+                                                    <input type="checkbox" id="cb_wt_tech" value="tech"/>
                                                     <label for="cb_wt_tech">Technical</label>
                                                 </p>
                                             </div>
                                             <div class="col-lg-4 col-sm-4 col-xs-4">
                                                 <p>
-                                                    <input type="checkbox" id="cb_wt_verb"/>
+                                                    <input type="checkbox" id="cb_wt_verb" value="verb"/>
                                                     <label for="cb_wt_verb">Verbal</label>
                                                 </p>
                                             </div>
@@ -432,19 +432,19 @@
                         <br><!-- <br> -->
                          <div class="row">
                             <div class="col-lg-6 col-sm-6 col-xs-6">
-                                <div class="col-lg-4 col-sm-4 col-xs-4" style="padding-left:0px;margin-top:12px;"><label>Offered CTC</label></div>
+                                <div class="col-lg-4 col-sm-4 col-xs-4" style="padding-left:0px;margin-top:8px;"><label>Offered CTC</label></div>
                                 <div class="col-lg-8 col-sm-8 col-xs-8">
-                                    <input class="form-control" type="text" name="ctc"  placeholder="Enter Amount Here ( lakhs )">
+                                    <input class="form-control" type="number" name="ctc" id="ctc"  placeholder="Enter Amount Here ( lakhs )">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-sm-6 col-xs-6">
-                                <div class="col-lg-2 col-sm-2 col-xs-2" style="padding-left:0px;margin-top:12px;"><label>Bond</label></div>
+                                <div class="col-lg-2 col-sm-2 col-xs-2" style="padding-left:0px;margin-top:8px;"><label>Bond</label></div>
                                 <div class="col-lg-5 col-sm-5 col-xs-5">
-                                    <input class="form-control" type="text" name="bond_time" placeholder="Period ( months )" style="width:100%">
+                                    <input class="form-control" type="number" name="bond_time" id="bond_time" placeholder="Period ( months )" style="width:100%">
                                 </div>
                                 <!-- <div class="col-lg-1 col-sm-1 col-xs-1"></div> -->
                                 <div class="col-lg-5 col-sm-5 col-xs-5">
-                                    <input class="form-control" type="text" name="bond_amt" placeholder="Amount ( lakhs )" style="width:100%">
+                                    <input class="form-control" type="number" name="bond_amt" id="bond_amt"placeholder="Amount ( lakhs )" style="width:100%">
                                 </div>
                             </div>
                          </div>
@@ -465,7 +465,7 @@
                         <!-- <div class="col-lg-1 col-sm-1 col-xs-1"></div> -->
                             <!-- <div class="col-lg-10 col-sm-10 col-xs-10"> -->
 
-                                <div style="margin-left:18%" >
+                                <div style="margin-left:13%" >
                                     <button type="button" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="window.open('res/Questions.xlsx')"">Download Question Template</button>
                             <!-- <button type="file" id="quesUp" class="btn btn-default btn-awesome"">Upload Questions</button> -->
                             
@@ -474,8 +474,12 @@
                                     <input id="uploadBtn" type="file" class="upload" />
                                 </div>
 
+                                <!-- <div  > -->
+                                    <span style="margin-right:10px;font-weight:bold;font-size:15px;">OR</span>
+                                <!-- </div> -->
 
-                            <button type="submit" id="myBtn" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="getFormat()"><a href="create-qs.html">Submit</a></button>                                    
+
+                            <button id="myBtn" type="button" class="btn btn-default btn-awesome" style="margin-right:10px" onclick="onSubmit()"><!-- <a href="create-qs.html" style="color:#fff !important;"> -->Create Database<!-- </a> --></button>                                    
                                 </div>
                                     
                             <!-- </div> -->
@@ -485,7 +489,7 @@
                         </div>
                             
 
-                        </form>
+                        </div>
 
                     </div>
                     <div class="col-lg-3"></div>

@@ -30,7 +30,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 /*Student List*/
 
 .blue.darken-2 {
-    background-color: #28a7e9 !important;
+    background-color: #28a7e9;
     width: 250px;
     margin-left: auto;
     margin-right: auto;

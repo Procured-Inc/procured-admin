@@ -1,6 +1,38 @@
 var ques = {
-	apti : []
+	apti : [],
+	bev:[],
+	psycho:[],
+	tech:[],
+	verb:[]
 };
+
+var format =["apti", "bev", "psycho", "tech", "verb"];
+var fullFormat =["Aptitude", "Behavioral", "Psyschometric", "Technical", "Verbal"];
+var ques1 = JSON.parse(localStorage.getItem("quesFormat"));
+var qfix = localStorage.getItem("qfix");
+if(qfix==0) document.getElementById("fa_left").style.color = "gainsboro";
+//Current Topic
+function getCur(){
+	qfix=localStorage.getItem('qfix');
+	if(ques1[format[qfix]]=="yes") return format[qfix];
+	else if(ques1[format[qfix]]=="no"){
+		qfix++;
+		if(qfix>4) endCreateQb();
+		else{
+			localStorage.setItem("qfix",qfix);
+			return getCur();
+		}
+	}
+}
+var fin = getCur();
+localStorage.setItem('fin',fin);
+var cur = ques1[fin];
+$("#topic").text(fullFormat[qfix]);
+
+function endCreateQb(){
+	;
+}
+
 
 // Populate previous questions
 // var ok;
@@ -17,7 +49,7 @@ function popTable(obj,arr){
 				+'<td width=\"10%\" name=\"'+TI_ID+'_'+arr[3]+'\">'+arr[3]+'</td>'
 				+'</tr>';
 
-				$("#q_body").append(qrow);
+				$("#q_body").prepend(qrow);
 				document.getElementsByName(TI_ID+'_'+obj.correct)[0].style.backgroundColor = "#dff0d8";
 				document.getElementsByName(TI_ID+'_'+obj.correct)[0].style.fontWeight = "bold";
 				document.getElementsByName(TI_ID+'_'+obj.correct)[0].style.color = "#666B85";
@@ -26,10 +58,11 @@ function popTable(obj,arr){
 function getQues(){
 
 			var data;
+			fin=localStorage.getItem('fin');
 									$.ajax({
-											"url":"http://178.33.132.20:30000/questions/apti",
+											"url":"http://178.33.132.20:30000/questions/"+fin,
 											"method" :"GET",
-											// "contentType":"application/json",
+											"contentType":"application/json",
 											"data" : data ,
 											// "processData": false,
 											"dataType" : "json",
@@ -104,6 +137,7 @@ function addQues(){
 
 				var test = {
 					"testID": "TI_ID",
+    				"qID": 1,
 					"ques": $('#ques').val(),
 					"correct": corAns,
 					"answers": [
@@ -114,13 +148,13 @@ function addQues(){
 					]
 				};
 
-				$("#q_body").append(qrow);
+				$("#q_body").prepend(qrow);
 				document.getElementsByName(TI_ID+'_'+corAns)[0].style.backgroundColor = "#dff0d8";
 				document.getElementsByName(TI_ID+'_'+corAns)[0].style.fontWeight = "bold";
 				document.getElementsByName(TI_ID+'_'+corAns)[0].style.color = "#666B85";
 				
 
-				ques.apti.push(test);
+				ques[fin].push(test);
 
 							$('#ques').val('');
 							$('#q_1').val('');
@@ -139,8 +173,10 @@ function addQues(){
 								// }
 								// };
 					// 			console.log(test);
+					fin=localStorage.getItem('fin');
+
 									$.ajax({
-											"url":"http://178.33.132.20:30000/questions/apti",
+											"url":"http://178.33.132.20:30000/questions/"+fin,
 											"method" :"POST",
 											"contentType":"application/json",
 											"data" : JSON.stringify(test) ,
@@ -166,4 +202,28 @@ function clearErr(){
 	$('#q_2').parent('td').removeClass('has-error');
 	$('#q_3').parent('td').removeClass('has-error');
 	$('#q_4').parent('td').removeClass('has-error');
+}
+
+function nextqb(){
+	// console.log("Hello");
+	if(qfix<4) {
+		localStorage.setItem('qfix',++qfix);
+		var fin = getCur();
+		localStorage.setItem('fin',fin);
+		var cur = ques1[fin];
+		$("#topic").text(fullFormat[qfix]);
+		getQues();
+	}else endCreateQb();
+}
+
+function prevqb(){
+	// console.log("Hello");
+	if(qfix<1) {
+		localStorage.setItem('qfix',--qfix);
+		var fin = getCur();
+		localStorage.setItem('fin',fin);
+		var cur = ques1[fin];
+		$("#topic").text(fullFormat[qfix]);
+		getQues();
+	}else endCreateQb();
 }
