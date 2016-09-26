@@ -71,7 +71,7 @@ function getColleges(){
 
 												$.each(colleges,function(key,value)
 										         {
-										             var option = "<option value=\""+value.college_name+ "\"> "+value.college_name+"</option>";
+										             var option = "<option value=\""+value.college_id+ "\"> "+value.college_name+"</option>";
 													 $("#ddCollege").append(option);
          										});
 
@@ -134,6 +134,52 @@ function onSubmit(){
 	ct.bond_amt = $("#bond_amt").val();
 	ct.reqs = $("#reqs").val();
 
+	localStorage.setItem('ct',JSON.stringify(ct));
+
+	doit();
+
 	window.location.href = "create-qs.html";
 }
 
+function doit(){
+var ct = JSON.parse(localStorage.getItem('ct'));
+									var info={
+									    "company_id": "inc01",
+									    "college_id":ct.college,
+									    "test_det":"nitd",
+									    "test_date":ct.date_of_test,
+									    "test_users":500,
+									    "test_duration":9,
+									    "test_details":{
+											"crit_10":ct.crit_10,
+											"crit_12":ct.crit_12,
+											"cgpa":ct.cgpa,
+											"test_format":ct.test_format,
+											"ctc":ct.ctc,
+											"bond_time":ct.bond_time,
+											"bond_amt":ct.bond_amt,
+											"reqs":ct.reqs,
+											"test_id":""
+										}
+									  };
+console.log("in");
+console.log(info);
+									$.ajax({
+											"url":"http://192.168.1.147:20000/admin/test/create",
+											"method" :"POST",
+											"contentType":"application/json",
+											"data" : JSON.stringify(info) ,
+											"processData": false,
+											"dataType" : "json",
+									       	
+										success: function(data) {
+												console.log(data);
+												console.log("SUCCESS");
+
+										},error: function(d) {
+											console.log(d);
+											console.log("FAILURE");
+										}
+									});
+									alert(info);
+								}

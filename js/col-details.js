@@ -116,14 +116,42 @@ company1: [
    ]
 };
 
+var companies={};
+									$.ajax({
+								        "url": "http://178.33.132.20:20000/admin/college/upcoming/inc01",
+								        "method": "GET",
+								        "contentType": "application/json",
+								        "data": companies,
+								        // "processData": false,
+								        "dataType": "json",
+
+								        async: false,
+								        success: function(companies) {
+								            console.log(companies);
+								            console.log("SUCCESS");
+								            localStorage.setItem('companies',JSON.stringify(companies));
+								            doAll();
+								            return companies;
+
+								        },
+								        error: function(d) {
+								            console.log(d);
+								            console.log("FAILURE");
+								        }
+								    });
+
 //col-details
+
+function doAll(){
+
 var comp = localStorage.getItem('cur_comp');
+companies = JSON.parse(localStorage.getItem('companies'));
 
 //set json
 $.each(companies, function(keys, values){
-	if(keys==comp){
+	if(keys=='company2'){
 	for(var kx in values){
-		var date = new Date (values[kx].date_of_test);
+		var date = new Date (values[kx].date_of_test.split('T')[0]);
 		values[kx].dot_day=date.getDate();
 		values[kx].dot_month=date.getMonth()+1;
 		values[kx].dot_year=date.getYear()+1900;
@@ -135,10 +163,11 @@ $.each(companies, function(keys, values){
 	var company=localStorage.getItem("company");
 	var college=localStorage.getItem("college");
 	$.each(companies, function(keys, values){
-		if(keys==comp){
-			if(values[company].comp==college) colObj=values[company];
+		if(keys=='company2'){
+			colObj=values[parseInt(college)-1];
 		}
 	});
+	console.log("co "+colObj);
 
 	var dets = 	"<br>"
 						+"<h2 id=\"col_name\" style=\"text-align: center;\">"+colObj.name+"</h2>"
@@ -152,7 +181,7 @@ $.each(companies, function(keys, values){
                         +"</tr>"
                         +"<tr>"
                         +"<td style=\"font-weight:bold;\">Estimated No. of Students</td>"
-                        +"<td align=\"right\">"+colObj.students+"</td>"
+                        +"<td align=\"right\">"+colObj.test_users+"</td>"
                         +"</tr>"
                         +"<tr>"
                         +"<td style=\"font-weight:bold;\">Date of Test</td>"
@@ -249,4 +278,6 @@ function viewDetails(ix,cix){
 	localStorage.setItem('company', ix);
 	localStorage.setItem('college', cix);
 	window.location.href="col-details.html";
+}
+
 }
