@@ -52,7 +52,7 @@ function endCreateQb(){		var ct = JSON.parse(localStorage.getItem('ct'));
 console.log("in");
 console.log(info);
 									$.ajax({
-											"url":"http://192.168.1.147:20000/admin/test/create",
+											"url":"http://178.33.132.20:20000/admin/test/create",
 											"method" :"POST",
 											"contentType":"application/json",
 											"data" : JSON.stringify(info) ,
@@ -101,7 +101,7 @@ function getQues(){
 			var data;
 			fin=localStorage.getItem('fin');
 									$.ajax({
-											"url":"http://178.33.132.20:30000/questions/"+fin,
+											"url":"http://178.33.132.20:20000/questions/"+fin,
 											"method" :"GET",
 											"contentType":"application/json",
 											"data" : data ,

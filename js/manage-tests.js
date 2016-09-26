@@ -262,7 +262,7 @@ function doAll() {
                         "</div>" +
                         "</div>" +
                         "<a href=\"#\">" +
-                        "<div class=\"panel-footer\" id=\"viewDetails\" style=\"color:" + col + ";\">" +
+                        "<div class=\"panel-footer\" id=\"viewDetails\" value="+ix+" style=\"color:" + col + ";\">" +
                         "<span class=\"pull-left\" >View Details</span>" +
                         "<span class=\"pull-right\"><i class=\"fa fa-arrow-circle-right\"></i></span>" +
                         "<div class=\"clearfix\"></div>" +
