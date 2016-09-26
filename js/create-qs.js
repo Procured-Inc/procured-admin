@@ -101,7 +101,7 @@ function getQues(){
 			var data;
 			fin=localStorage.getItem('fin');
 									$.ajax({
-											"url":"http://178.33.132.20:20000/questions/"+fin,
+											"url":"http://178.33.132.20:30000/questions/"+fin,
 											"method" :"GET",
 											"contentType":"application/json",
 											"data" : data ,

@@ -77,7 +77,7 @@ function compD(b,a){
 					break;
 			case 1: return a.name.localeCompare(b.name);
 					break;
-			case 2: return a.score-b.score;
+			case 2: return b.score-a.score;
 					break;
 		}
 		// return a.score-b.score;
@@ -88,7 +88,7 @@ function compA(a,b){
 					break;
 			case 1: return a.name.localeCompare(b.name);
 					break;
-			case 2: return a.score-b.score;
+			case 2: return b.score-a.score;
 					break;
 		}
 }
@@ -102,15 +102,18 @@ function sortBy(val){
 		data.sort(compA);
 	}
 	// data.sort(comp);
+	var cutoff = localStorage.getItem('cutoff');
 	$('#mytable tbody').empty();
 	for(var ix in data){
-		var trow = "<tr>"
-						+"<td>"+data[ix].sid+"</td>"
-						+"<td>"+data[ix].name+"</td>"
-						+"<td>"+data[ix].score+"</td>"
-						+"</tr>";
-				$('#t_body').append(trow);
-	}
+			if(data[ix].score>cutoff){
+				var trow = "<tr>"
+								+"<td>"+data[ix].sid+"</td>"
+								+"<td>"+data[ix].name+"</td>"
+								+"<td>"+data[ix].score+"</td>"
+								+"</tr>";
+						$('#t_body').append(trow);
+			}
+		}
 }
 
 	// for(var ix in data){
@@ -164,3 +167,32 @@ sortBy(0);
 // }
 
 // $("#myTable").tablesorter();
+
+function setCutoff(){
+
+	var cutoff = $('#cutoff').val();
+	localStorage.setItem('cutoff',cutoff);
+
+	
+		chosen=2;
+		switcher=(!switcher);
+		if(switcher){
+			data.sort(compD);
+		}else{
+			data.sort(compA);
+		}
+		// data.sort(comp);
+		$('#mytable tbody').empty();
+		for(var ix in data){
+			if(data[ix].score>cutoff){
+				var trow = "<tr>"
+								+"<td>"+data[ix].sid+"</td>"
+								+"<td>"+data[ix].name+"</td>"
+								+"<td>"+data[ix].score+"</td>"
+								+"</tr>";
+						$('#t_body').append(trow);
+			}
+		}
+	
+
+}

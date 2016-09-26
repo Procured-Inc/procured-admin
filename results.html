@@ -148,9 +148,9 @@
                         <li>
                             <a href="create-test.html"> <i class="fa fa-fw fa-edit"></i> Create Test</a>
                         </li>
-                        <li >
+                       <!--  <li >
                             <a href="create-qs.html"><i class="fa fa-fw fa-table"></i> Create Question Set</a>
-                        </li>
+                        </li> -->
                         <li class="active">
                             <a href="results.html"><i class="fa fa-fw fa-bar-chart"></i> View Results</a>
                         </li>
@@ -210,18 +210,32 @@
                     </div>
                     <!-- /.row -->
                     <div class="row">
+                        <div class="col-lg-4"></div>
+                        <div class="form-group col-lg-1">
+                                <label style="margin-top:14px">Select Cutoff</label>
+                        </div>
+                        <div class="form-group col-lg-1">
+                                <input  id="cutoff" class="form-control info" style="display:inline;margin-top:6px">
+                        </div>
+                        <div class="form-group col-lg-2">
+                                <input type="button" class="btn btn-default btn-awesome"  value="Submit" id="mybutton" name="Submit" onclick="setCutoff()" style="text-align:center;;min-width:75px"/>
+                        </div>
+                        <div class="col-lg-4"></div> 
+                    </div>
 
-                    <div class="col-lg-3"></div>
-                    <div class="col-sm-6 col-lg-6 text-center" style="margin-bottom:50px">
+                    <div class="row">
+
+                    <!-- <div class="col-lg-3"></div> -->
+                    <div class="col-sm-6 col-lg-6 text-center" style="margin-bottom:50px; margin-top:45px">
                    <!-- <label class="label label-success">Line Chart</label> -->
-                  <div id="stacked"  style="height:500px"></div>
-                </div>
-                    <div class="col-lg-3"></div>
+                      <div id="stacked"  style="height:500px"></div>
+                    </div>
+                    <!-- <div class="col-lg-3"></div> -->
 
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <!-- <div style="border-bottom: 1px solid #eee; margin-bottom:3%;"></div> -->
                             <div class="table-responsive nice-table">
-                                <table id="mytable" class="table-fill" style="max-width:1000px; margin-top:25px">
+                                <table id="mytable" class="table-fill" style="max-width:1000px; margin-top:25px;margin-bottom:25px;">
                                     <thead>
                                         <tr>
                                             <th class="text-left" width=\"10%\" onclick="sortBy(0)">Student Id<i class="fa fa-fw fa-sort" style="float:right;margin-top:3px"></i></th>

@@ -181,5 +181,5 @@ console.log(info);
 											console.log("FAILURE");
 										}
 									});
-									alert(info);
+									// alert(info);
 								}
