@@ -340,7 +340,7 @@ function doAll() {
                 return "#9b59b6";
                 break;
             case 5:
-                return "#e67e22";
+                return "#8BC34A";
                 break;
                 // case 6 : return "#34495e";
                 // 		break;
