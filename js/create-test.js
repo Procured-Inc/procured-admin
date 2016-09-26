@@ -168,13 +168,14 @@ console.log(info);
 											"url":"http://178.33.132.20:20000/admin/test/create",
 											"method" :"POST",
 											"contentType":"application/json",
-											"data" : JSON.stringify(info) ,
+											"data" : {} ,
 											"processData": false,
 											"dataType" : "json",
 									       	
-										success: function(data) {
-												console.log(data);
+										success: function(msg) {
+												console.log(msg);
 												console.log("SUCCESS");
+												alert(msg);
 
 										},error: function(d) {
 											console.log(d);
@@ -182,4 +183,4 @@ console.log(info);
 										}
 									});
 									// alert(info);
-								}
+}
