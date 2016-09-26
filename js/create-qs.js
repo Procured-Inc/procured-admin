@@ -46,7 +46,7 @@ function endCreateQb(){		var ct = JSON.parse(localStorage.getItem('ct'));
 											"bond_time":ct.bond_time,
 											"bond_amt":ct.bond_amt,
 											"reqs":ct.reqs,
-											"test_id":""
+											"test_id":"TI_ID"
 										}
 									  };
 console.log("in");
@@ -60,7 +60,8 @@ console.log(info);
 											"dataType" : "json",
 									       	
 										success: function(data) {
-												console.log(data);
+												// alert(data.testid);
+												// localStorage.setItem('testid',data.testid);
 												console.log("SUCCESS");
 
 										},error: function(d) {
@@ -80,7 +81,7 @@ console.log(info);
 function popTable(obj,arr){
 	// console.log("here"+obj);
 	// console.log("here_"+arr[0]);
-	var TI_ID = obj.testID;
+	var TI_ID = "TI_ID";
 	var qrow= '<tr>'
 				+'<td width=\"10%\">'+TI_ID+'</td>'
 				+'<td width=\"50%\">'+obj.ques+'</td>'

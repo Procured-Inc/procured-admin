@@ -9,7 +9,7 @@ var ct = {
 	"bond_time":"",
 	"bond_amt":"",
 	"reqs":"",
-	"test_id":""
+	"test_id":"TI_ID"
 }
 
 var json = {
@@ -159,7 +159,7 @@ var ct = JSON.parse(localStorage.getItem('ct'));
 											"bond_time":ct.bond_time,
 											"bond_amt":ct.bond_amt,
 											"reqs":ct.reqs,
-											"test_id":""
+											"test_id":"TI_ID"
 										}
 									  };
 console.log("in");
@@ -168,14 +168,21 @@ console.log(info);
 											"url":"http://178.33.132.20:20000/admin/test/create",
 											"method" :"POST",
 											"contentType":"application/json",
-											"data" : {} ,
+											"data" : JSON.stringify(info),
 											"processData": false,
 											"dataType" : "json",
 									       	
-										success: function(msg) {
-												console.log(msg);
+										success: function(data) {
+												console.log(data);
+												// if(data[0].testid){
+												// sessionStorage.setItem('testid',data.testid);
+
+												// }
+												// else{
+												// 	sessionStorage.setItem('testid', null);
+												// }
 												console.log("SUCCESS");
-												alert(msg);
+												// alert(data);
 
 										},error: function(d) {
 											console.log(d);
