@@ -1,59 +1,69 @@
 var data = [
 	 {
-		"name":"Nuzha",
-		"sid":"123",
-		"score":"34"
-	},
-	{
-		"name":"Vikash",
-		"sid":"911",
-		"score":"73"
-	},
-	{
-		"name":"Prajwal",
-		"sid":"423",
-		"score":"54"
-	},
-	{
-		"name":"Shubham",
-		"sid":"523",
-		"score":"64"
-	},
-	{
-		"name":"Jyoti",
-		"sid":"023",
-		"score":"74"
-	},
-	{
-		"name":"Debapriya",
-		"sid":"122",
-		"score":"46"
-	},
-	{
-		"name":"Manogna",
-		"sid":"144",
-		"score":"73"
-	},
-	{
-		"name":"Sujit",
-		"sid":"346",
-		"score":"54"
-	},
-	{
-		"name":"Ashish",
-		"sid":"745",
-		"score":"64"
-	},
-	{
-		"name":"Amarya",
-		"sid":"534",
-		"score":"74"
-	},
-	{
-		"name":"Freya",
-		"sid":"235",
-		"score":"46"
-	}
+    "name":"Nuzha",
+    "sid":123,
+    "apti":34,
+    "tech":43
+  },
+  {
+    "name":"Vikash",
+    "sid":911,
+    "apti":73,
+    "tech":73
+  },
+  {
+    "name":"Prajwal",
+    "sid":423,
+    "apti":54,
+    "tech":56
+  },
+  {
+    "name":"Shubham",
+    "sid":523,
+    "apti":64,
+    "tech":34
+  },
+  {
+    "name":"Jyoti",
+    "sid":023,
+    "apti":74,
+    "tech":73
+  },
+  {
+    "name":"Debapriya",
+    "sid":451,
+    "apti":46,
+    "tech":93
+  },{
+    "name":"Manogna",
+    "sid":144,
+    "apti":100,
+    "tech":100
+  },
+  {
+    "name":"Sujit",
+    "sid":346,
+    "apti":35,
+    "tech":73
+  },
+  {
+    "name":"Ashish",
+    "sid":745,
+    "apti":88,
+    "tech":73
+  },
+  {
+    "name":"Amarya",
+    "sid":534,
+    "apti":35,
+    "tech":72
+  },
+  {
+    "name":"Freya",
+    "sid":235,
+    "apti":36,
+    "tech":73
+  }
 ];
 
 // var trow = "<tr>"
@@ -68,7 +78,7 @@ var data = [
 // makeTable();
 
 var switcher = Boolean(0);
-var arr = ["sid","name","score"];
+var arr = ["sid","name","apti","tech","score"];
 var chosen;
 
 function compD(b,a){
@@ -77,10 +87,14 @@ function compD(b,a){
 					break;
 			case 1: return a.name.localeCompare(b.name);
 					break;
-			case 2: return b.score-a.score;
+			case 2: return b.apti-a.apti;
+					break;
+			case 3: return b.tech-a.tech;
+					break;
+			case 4: return (b.apti+b.tech)-(a.apti+a.tech);
 					break;
 		}
-		// return a.score-b.score;
+		// return a.apti-b.apti;
 }
 function compA(a,b){
 		switch(chosen){
@@ -88,7 +102,11 @@ function compA(a,b){
 					break;
 			case 1: return a.name.localeCompare(b.name);
 					break;
-			case 2: return b.score-a.score;
+			case 2: return b.apti-a.apti;
+					break;
+			case 3: return b.tech-a.tech;
+					break;
+			case 4: return (b.apti+b.tech)-(a.apti+a.tech);
 					break;
 		}
 }
@@ -104,16 +122,22 @@ function sortBy(val){
 	// data.sort(comp);
 	var cutoff = localStorage.getItem('cutoff');
 	$('#mytable tbody').empty();
+	var dataz=[];
 	for(var ix in data){
-			if(data[ix].score>cutoff){
+			if(data[ix].apti+data[ix].tech>cutoff){
+				dataz.push(data[ix]);
 				var trow = "<tr>"
 								+"<td>"+data[ix].sid+"</td>"
 								+"<td>"+data[ix].name+"</td>"
-								+"<td>"+data[ix].score+"</td>"
+								+"<td>"+data[ix].apti+"</td>"
+								+"<td>"+data[ix].tech+"</td>"
+								+"<td>"+parseInt(data[ix].apti+data[ix].tech)+"</td>"
 								+"</tr>";
 						$('#t_body').append(trow);
 			}
 		}
+		graphit(dataz);
+		$('#stacked').children()[1].remove();
 }
 
 	// for(var ix in data){
@@ -173,7 +197,7 @@ function setCutoff(){
 	var cutoff = $('#cutoff').val();
 	localStorage.setItem('cutoff',cutoff);
 
-	
+	var dataz=[];
 		chosen=2;
 		switcher=(!switcher);
 		if(switcher){
@@ -184,15 +208,47 @@ function setCutoff(){
 		// data.sort(comp);
 		$('#mytable tbody').empty();
 		for(var ix in data){
-			if(data[ix].score>cutoff){
+			if(data[ix].apti+data[ix].tech>cutoff){
+				dataz.push(data[ix]);
 				var trow = "<tr>"
 								+"<td>"+data[ix].sid+"</td>"
 								+"<td>"+data[ix].name+"</td>"
-								+"<td>"+data[ix].score+"</td>"
+								+"<td>"+data[ix].apti+"</td>"
+								+"<td>"+data[ix].tech+"</td>"
+								+"<td>"+parseInt(data[ix].apti+data[ix].tech)+"</td>"
 								+"</tr>";
 						$('#t_body').append(trow);
 			}
 		}
+
+		// $('#stacked').remove();
+		graphit(dataz);
+		$('#stacked').children()[1].remove();
 	
 
 }
+
+
+function graphit(data){
+	var datax = data,
+    config = {
+      data: datax,
+      xkey: 'name',
+      ykeys: ['apti','tech'],
+      labels: ['Aptitude','Technical'],
+      fillOpacity: 0.6,
+      hideHover: 'auto',
+      behaveLikeLine: true,
+      resize: true,
+      pointFillColors:['#ffffff'],
+      pointStrokeColors: ['black'],
+      lineColors:['gray','red']
+  };
+
+
+	config.element = 'stacked';
+	config.stacked = true;
+	Morris.Bar(config);
+}
+
+// graphit(data);
