@@ -230,8 +230,12 @@ function doAll() {
         // window.loaction.href="col-details.htm?data="+data;
         // console.log(cix+"Hello"+ix);
         cix=2;
+        var obj=this;
+        // alert($(obj).attr('value'));
+        var cal=$(obj).attr('value');
+        // alert(cal);
         localStorage.setItem('company', ix);
-        localStorage.setItem('college', cix);
+        localStorage.setItem('college', cal);
         window.location.href = "col-details.html";
     }
 

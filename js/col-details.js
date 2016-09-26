@@ -164,7 +164,7 @@ $.each(companies, function(keys, values){
 	var college=localStorage.getItem("college");
 	$.each(companies, function(keys, values){
 		if(keys=='company2'){
-			colObj=values[parseInt(college)-1];
+			colObj=values[parseInt(college)];
 		}
 	});
 	console.log("co "+colObj);
